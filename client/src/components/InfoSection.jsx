@@ -1,8 +1,25 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import '../index.css';
 
 const InfoSection = () => {
+    const words = [
+        "International Commerce",
+        "Global Trade",
+        "Supply Chains",
+        "Strategic Logistics",
+        "Digital Markets"
+    ];
+
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prevIndex) => (prevIndex + 1) % words.length);
+        }, 2000);
+        return () => clearInterval(interval);
+    }, [words.length]);
+
     return (
         <section className="section-padding info-section">
             <div className="container">
@@ -14,7 +31,23 @@ const InfoSection = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="heading-serif">Redefining <span style={{ color: '#1976D2' }}>International Commerce</span></h2>
+                        <h2 className="heading-serif">
+                            Redefining{' '}
+                            <span className="dynamic-word-container">
+                                <AnimatePresence mode="wait">
+                                    <motion.span
+                                        key={words[index]}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: -20 }}
+                                        transition={{ duration: 0.5, ease: "easeOut" }}
+                                        className="dynamic-word"
+                                    >
+                                        {words[index]}
+                                    </motion.span>
+                                </AnimatePresence>
+                            </span>
+                        </h2>
                         <p>
                             <strong>SARAVANA OVERSEAS</strong> is not just another trading company – we're a tech-enabled
                             logistics startup disrupting traditional supply chains. Born from a vision to make global trade
@@ -50,3 +83,4 @@ const InfoSection = () => {
 };
 
 export default InfoSection;
+

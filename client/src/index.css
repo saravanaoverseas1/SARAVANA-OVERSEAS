@@ -588,6 +588,29 @@ ul {
   color: var(--accent-blue);
 }
 
+.dynamic-word-container {
+  display: inline-block;
+  min-width: 450px;
+  vertical-align: bottom;
+  text-align: left;
+}
+
+.dynamic-word {
+  background: linear-gradient(135deg, #1976D2 0%, #42A5F5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .dynamic-word-container {
+    display: block;
+    min-width: 100%;
+  }
+}
+
 .info-text p {
   font-size: 1.1rem;
   color: var(--text-muted);
