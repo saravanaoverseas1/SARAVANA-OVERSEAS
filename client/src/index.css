@@ -638,10 +638,27 @@ ul {
 }
 
 /* Testimonial */
-.testimonial-section {
+.testimonial-scroll-wrapper {
+  position: relative;
+  height: 350vh;
+  /* Control the 'medium' speed by adjusting this height */
+}
+
+.testimonial-sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(227, 242, 253, 0.8) 100%);
-  text-align: center;
   backdrop-filter: blur(10px);
+}
+
+.testimonial-section {
+  text-align: center;
+  width: 100%;
 }
 
 .quote-icon {
