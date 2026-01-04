@@ -58,14 +58,27 @@ const Hero = () => {
                     <img src={logoImage} alt="Logo" className="hero-logo-img" />
                 </motion.div>
 
-                <motion.h1
-                    className="hero-main-title"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                >
-                    SARAVANA OVERSEAS
-                </motion.h1>
+                <div className="hero-main-title">
+                    {Array.from("SARAVANA OVERSEAS").map((letter, index) => (
+                        <motion.span
+                            key={index}
+                            style={{ display: "inline-block" }}
+                            initial={{ y: 0, color: "#ffffff" }}
+                            animate={{
+                                y: [0, -15, 0],
+                                color: ["#ffffff", "#4FC3F7", "#ffffff"], // White -> Light Ocean Blue -> White
+                            }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                delay: index * 0.1,
+                            }}
+                        >
+                            {letter === " " ? "\u00A0" : letter}
+                        </motion.span>
+                    ))}
+                </div>
 
                 <motion.p
                     className="hero-tagline-italic"
