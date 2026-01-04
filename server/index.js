@@ -13,12 +13,12 @@ app.use(express.json());
 // Transport Configuration
 const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
-    port: process.env.SMTP_PORT, // 587 or 465
-    secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
-    // auth: {
-    //     user: process.env.SMTP_USER,
-    //     pass: process.env.SMTP_PASS
-    // }
+    port: process.env.SMTP_PORT,
+    secure: process.env.SMTP_SECURE === 'true',
+    auth: (process.env.SMTP_USER && process.env.SMTP_PASS) ? {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
+    } : undefined
 });
 
 // Verify connection configuration
@@ -35,10 +35,10 @@ app.post('/send-email', (req, res) => {
     const { name, email, message } = req.body;
 
     const mailOptions = {
-        from: `"${name}" <${process.env.EMAIL_FROM}>`, // sender address
-        to: process.env.EMAIL_TO, // list of receivers
-        replyTo: email, // Set Reply-To to the user's email
-        subject: `New Contact Form Inquiry from ${name}`, // Subject line
+        from: `"${name}" <${process.env.EMAIL_FROM}>`,
+        to: process.env.EMAIL_TO,
+        replyTo: email,
+        subject: `New Contact Form Inquiry from ${name}`,
         html: `
             <h3>New Inquiry from Saravana Overseas Website</h3>
             <p><strong>Name:</strong> ${name}</p>
