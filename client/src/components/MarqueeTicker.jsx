@@ -4,9 +4,6 @@ import './MarqueeTicker.css';
 
 const MarqueeTicker = () => {
     const words = [
-        "REDEFINING LOGISTICS",
-        "GLOBAL SUPPLY CHAINS",
-        "TECH-ENABLED TRADING",
         "24/7 SUPPORT",
         "SARAVANA OVERSEAS",
         "100% TRANSPARENCY",

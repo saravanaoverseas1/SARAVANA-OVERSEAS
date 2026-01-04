@@ -1,7 +1,8 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GlobalVideoBackground from './components/GlobalVideoBackground';
 import Navbar from './components/Navbar';
+import ProductDetails from './components/ProductDetails';
 import './index.css';
 
 // Lazy load components for performance
@@ -32,6 +33,21 @@ const LoadingScreen = () => (
   </div>
 );
 
+const Home = () => (
+  <>
+    <Hero />
+    <Products />
+    <Gallery />
+    <Blogs />
+    <Careers />
+    <About />
+    <InfoSection />
+    <LocationMap />
+    <Testimonial />
+    <ContactForm />
+  </>
+);
+
 function App() {
   return (
     <Router>
@@ -39,16 +55,10 @@ function App() {
         <GlobalVideoBackground />
         <Navbar />
         <Suspense fallback={<LoadingScreen />}>
-          <Hero />
-          <Products />
-          <Gallery />
-          <Blogs />
-          <Careers />
-          <About />
-          <InfoSection />
-          <LocationMap />
-          <Testimonial />
-          <ContactForm />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product/:productId" element={<ProductDetails />} />
+          </Routes>
           <Footer />
           <WhatsAppFloat />
         </Suspense>

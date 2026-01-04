@@ -8,6 +8,7 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [productsDropdown, setProductsDropdown] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,7 +29,18 @@ const Navbar = () => {
 
     const closeMobileMenu = () => {
         setMobileMenuOpen(false);
+        setProductsDropdown(false);
     };
+
+    const categories = [
+        "Machinery and Vehicles",
+        "Machinery and Tools",
+        "Agri Commodities",
+        "General Trading",
+        "Handicrafts",
+        "Spices",
+        "Handlooms Products"
+    ];
 
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
@@ -45,7 +57,41 @@ const Navbar = () => {
                 <div className="nav-glass-wrap">
                     <ul className="nav-links desktop-nav">
                         <li><a href="#home" className="active">Home</a></li>
-                        <li><a href="#products">Products</a></li>
+                        <li
+                            className="dropdown-parent"
+                            onMouseEnter={() => setProductsDropdown(true)}
+                            onMouseLeave={() => setProductsDropdown(false)}
+                        >
+                            <a href="#products">Products</a>
+                            <AnimatePresence>
+                                {productsDropdown && (
+                                    <motion.div
+                                        className="modern-dropdown"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 10 }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        <div className="dropdown-arrow"></div>
+                                        <div className="dropdown-list">
+                                            {categories.map((cat, i) => {
+                                                const slug = cat.toLowerCase().replace(/ /g, '-').replace('&', 'and');
+                                                return (
+                                                    <Link
+                                                        key={i}
+                                                        to={`/product/${slug}`}
+                                                        className={`dropdown-link ${i === 0 ? 'highlight-item' : ''}`}
+                                                        onClick={() => setProductsDropdown(false)}
+                                                    >
+                                                        {cat}
+                                                    </Link>
+                                                );
+                                            })}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </li>
                         <li><a href="#blogs">Blogs</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#contact" className="nav-contact-btn">Contact</a></li>

@@ -6,9 +6,6 @@ const InfoSection = () => {
     const words = [
         "International Commerce",
         "Global Trade",
-        "Supply Chains",
-        "Strategic Logistics",
-        "Digital Markets"
     ];
 
     const [index, setIndex] = useState(0);
@@ -50,18 +47,13 @@ const InfoSection = () => {
                             </span>
                         </h2>
                         <p>
-                            <strong>SARAVANA OVERSEAS</strong> is not just another trading company – we're a tech-enabled
-                            logistics startup disrupting traditional supply chains. Born from a vision to make global trade
-                            accessible, transparent, and efficient for businesses of all sizes.
+                            <strong>SARAVANA OVERSEAS</strong> is a progressive international trade enterprise dedicated to bridging the gap between global supply and demand. We provide a robust and secure platform designed to facilitate the seamless exchange of high-quality products across both domestic and international borders.
                         </p>
                         <p>
-                            We leverage cutting-edge technology and strategic partnerships to connect manufacturers,
-                            suppliers, and buyers across continents. Our agile approach eliminates bottlenecks, reduces
-                            costs, and accelerates delivery timelines – transforming how the world trades.
+                            As a committed partner in the import-export landscape, our mission is to provide genuine, high-value services to stakeholders who are dedicated to the worldwide distribution of essential commodities. We act as the vital link in the global supply chain, ensuring that premium goods reach their destination efficiently and ethically.
                         </p>
                         <p>
-                            From our innovation hub in Coimbatore, we're building the future of cross-border commerce,
-                            one shipment at a time. Join us in our mission to democratize global trade.
+                            We believe in the power of fair trade and mutual growth. By maintaining transparent and reasonable dealings with our diverse network—including producers, farmers, wholesalers, and importers—we are rapidly establishing a formidable presence in the international arena.
                         </p>
                     </motion.div>
 

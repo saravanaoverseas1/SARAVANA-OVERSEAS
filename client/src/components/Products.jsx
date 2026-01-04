@@ -1,44 +1,50 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import '../index.css';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
     const products = [
         {
-            id: 1,
-            name: 'Smart Agriculture Solutions',
-            description: 'Connecting farmers to global markets with premium organic produce, grains, and specialty crops.',
-            image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?q=80&w=2070&auto=format&fit=crop'
+            id: 'machinery-and-vehicles',
+            name: 'Machinery and Vehicles',
+            description: 'Industrial tractors, excavators, and heavy-duty transport vehicles.',
+            image: '/machinery_vehicles_collage_1767517463792.png'
         },
         {
-            id: 2,
-            name: 'Industrial Equipment Hub',
-            description: 'Sourcing cutting-edge machinery and tools for manufacturing, construction, and automation.',
-            image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop'
+            id: 'machinery-and-tools',
+            name: 'Machinery and Tools',
+            description: 'Precision engineering tools and specialized workshop equipment.',
+            image: 'https://images.unsplash.com/photo-1504917595217-d4dc5be6b22b?q=80&w=2070&auto=format&fit=crop'
         },
         {
-            id: 3,
-            name: 'Textile Innovation',
-            description: 'Premium fabrics, sustainable materials, and fashion-forward textiles for global brands.',
-            image: 'https://images.unsplash.com/photo-1558769132-cb1aea3c8565?q=80&w=2074&auto=format&fit=crop'
+            id: 'agri-commodities',
+            name: 'Agri Commodities',
+            description: 'Fresh vegetables, seasonal fruits, premium grains, and cereals.',
+            image: '/agro_commodities_collage_1767517406330.png'
         },
         {
-            id: 4,
-            name: 'Tech & Electronics',
-            description: 'Latest gadgets, components, and smart devices delivered to your doorstep.',
-            image: 'https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=2001&auto=format&fit=crop'
+            id: 'general-trading',
+            name: 'General Trading',
+            description: 'Diverse range of consumer electronics, appliances, and lifestyle products.',
+            image: '/general_trading_collage_1767517445112.png'
         },
         {
-            id: 5,
-            name: 'Gourmet & Specialty Foods',
-            description: 'Authentic flavors from around the world – spices, beverages, and artisanal products.',
-            image: 'https://images.unsplash.com/photo-1506617420156-8e4536971650?q=80&w=2070&auto=format&fit=crop'
+            id: 'handicrafts',
+            name: 'Handicrafts',
+            description: 'Intricate palm products, handmade dolls, and traditional terracotta art.',
+            image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop'
         },
         {
-            id: 6,
-            name: 'Raw Materials Marketplace',
-            description: 'Industrial chemicals, polymers, and specialty materials for manufacturers.',
-            image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2070&auto=format&fit=crop'
+            id: 'spices',
+            name: 'Spices',
+            description: 'Authentic flavors and aromas from the finest spice gardens.',
+            image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop'
+        },
+        {
+            id: 'handlooms-products',
+            name: 'Handlooms Products',
+            description: 'Exquisite hand-woven textiles and traditional artisanal fabrics.',
+            image: 'https://images.unsplash.com/photo-1606041011872-596597976b25?q=80&w=2070&auto=format&fit=crop'
         }
     ];
 
@@ -55,24 +61,31 @@ const Products = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    What We Trade
+                    Premium Trade Portfolio
                 </motion.h2>
 
-                <div className="product-grid">
+                <div className="product-category-grid-modern">
                     {products.map((product, index) => (
                         <motion.div
                             key={product.id}
-                            className="product-card"
+                            className="modern-category-card"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
-                            <img src={product.image} alt={product.name} className="product-img" loading="lazy" />
-                            <div className="product-info">
-                                <h3>{product.name}</h3>
-                                <p>{product.description}</p>
-                            </div>
+                            <Link to={`/product/${product.id}`} className="card-link-wrap">
+                                <div className="modern-card-image">
+                                    <img src={product.image} alt={product.name} loading="lazy" />
+                                    <div className="modern-card-overlay">
+                                        <span>View Details</span>
+                                    </div>
+                                </div>
+                                <div className="modern-card-content">
+                                    <h3>{product.name}</h3>
+                                    <p>{product.description}</p>
+                                </div>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>
