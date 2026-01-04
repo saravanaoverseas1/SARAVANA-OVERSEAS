@@ -1808,9 +1808,28 @@ section {
 /* Modern Product Cards */
 .product-category-grid-modern {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   margin-top: 50px;
+}
+
+.product-category-grid-modern>.modern-category-card:first-child {
+  grid-column: 1 / -1;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .product-category-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-category-grid-modern {
+    grid-template-columns: 1fr;
+  }
 }
 
 .modern-category-card {

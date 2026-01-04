@@ -16,8 +16,28 @@ const ContactForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        alert('Thank you for reaching out! We will get back to you shortly.');
-        setFormData({ name: '', email: '', message: '' });
+
+        try {
+            const response = await fetch('http://localhost:5000/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                alert('Thank you for reaching out! We will get back to you shortly.');
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                alert('Something went wrong. Please try again later.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Failed to send message. Please check your connection.');
+        }
     };
 
     return (
