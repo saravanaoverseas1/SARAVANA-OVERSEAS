@@ -41,8 +41,8 @@ const Footer = () => {
                     <div>
                         <h3>Get In Touch</h3>
                         <ul>
-                            <li><span style={{ color: 'var(--accent-gold)' }}>Email:</span> saravanaoverseas1@gmail.com</li>
-                            <li><span style={{ color: 'var(--accent-gold)' }}>Email:</span> rraja_77@yahoo.co.in</li>
+                            <li><span style={{ color: 'var(--accent-gold)' }}>Email:</span> <a href="mailto:saravanaoverseas1@gmail.com">saravanaoverseas1@gmail.com</a></li>
+                            <li><span style={{ color: 'var(--accent-gold)' }}>Email:</span> <a href="mailto:rraja_77@yahoo.co.in">rraja_77@yahoo.co.in</a></li>
                             <li><span style={{ color: 'var(--accent-gold)' }}>Phone:</span> +91 9047385702</li>
                             <li style={{ marginTop: '10px', lineHeight: '1.4', fontSize: '0.9rem' }}>
                                 Location: Kondayanpalayam, Annur,<br />

@@ -67,7 +67,7 @@ const LocationMap = () => {
                                 <FaEnvelope className="contact-icon" />
                                 <div>
                                     <h4>Email</h4>
-                                    <p>saravanaoverseas1@gmail.com</p>
+                                    <p><a href="mailto:saravanaoverseas1@gmail.com">saravanaoverseas1@gmail.com</a></p>
                                 </div>
                             </div>
                         </div>
