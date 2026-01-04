@@ -84,6 +84,9 @@ const ContactForm = () => {
                         <div className="contact-header">
                             <h2 className="heading-serif">Start a Conversation</h2>
                             <p>Our experts are ready to streamline your global logistics today.</p>
+                            <p style={{ marginTop: '10px', fontSize: '0.9rem' }}>
+                                Or email us directly at: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=saravanaoverseas1@gmail.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-blue)', fontWeight: '600' }}>saravanaoverseas1@gmail.com</a>
+                            </p>
                         </div>
 
                         <form onSubmit={handleSubmit} className="modern-form">
