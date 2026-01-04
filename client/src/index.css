@@ -590,12 +590,10 @@ ul {
   margin-bottom: 25px;
   overflow: hidden;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease;
+
 }
 
-.logo-box-circle:hover {
-  transform: scale(1.05);
-}
+
 
 .hero-logo-img {
   width: 150%;

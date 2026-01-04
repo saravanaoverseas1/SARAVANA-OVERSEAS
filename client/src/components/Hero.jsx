@@ -30,9 +30,30 @@ const Hero = () => {
                 {/* Logo Box (Circle Redesign) */}
                 <motion.div
                     className="logo-box-circle"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    initial={{ opacity: 0, scale: 0.8, y: 0 }}
+                    animate={{
+                        opacity: 1,
+                        scale: 1,
+                        y: [0, -15, 0],
+                        rotate: [0, 2, -2, 0]
+                    }}
+                    transition={{
+                        opacity: { duration: 0.8, delay: 0.4 },
+                        scale: { duration: 0.8, delay: 0.4 },
+                        y: {
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            repeatType: "loop"
+                        },
+                        rotate: {
+                            duration: 5,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            repeatType: "loop"
+                        }
+                    }}
+                    whileHover={{ scale: 1.05 }}
                 >
                     <img src={logoImage} alt="Logo" className="hero-logo-img" />
                 </motion.div>
