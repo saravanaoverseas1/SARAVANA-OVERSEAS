@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaUser, FaEnvelope, FaCommentAlt, FaPaperPlane } from 'react-icons/fa';
 import '../index.css';
+import './ContactForm.css';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -10,12 +11,15 @@ const ContactForm = () => {
         message: ''
     });
 
+    const [status, setStatus] = useState('idle'); // 'idle', 'loading', 'success', 'error'
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setStatus('loading');
 
         try {
             const response = await fetch('http://localhost:5000/send-email', {
@@ -29,14 +33,18 @@ const ContactForm = () => {
             const data = await response.json();
 
             if (data.success) {
-                alert('Thank you for reaching out! We will get back to you shortly.');
+                setStatus('success');
                 setFormData({ name: '', email: '', message: '' });
+                // Hide success message after 5 seconds
+                setTimeout(() => setStatus('idle'), 5000);
             } else {
-                alert('Something went wrong. Please try again later.');
+                setStatus('error');
+                setTimeout(() => setStatus('idle'), 4000);
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('Failed to send message. Please check your connection.');
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 4000);
         }
     };
 
@@ -44,6 +52,27 @@ const ContactForm = () => {
         <section className="section-padding contact-section" id="contact">
             <div className="container">
                 <center><span className="section-tag">Get In Touch</span></center>
+
+                {/* Success Notification Popup */}
+                <div className={`notification-popup ${status === 'success' ? 'show-success' : ''}`}>
+                    <div className="notification-content">
+                        <div className="check-icon">
+                            ✓
+                        </div>
+                        <div className="notification-text">
+                            <h4>Message Sent!</h4>
+                            <p>We'll get back to you shortly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Error Notification Popup */}
+                {status === 'error' && (
+                    <div className="error-popup">
+                        <p>Something went wrong. Please try again.</p>
+                    </div>
+                )}
+
                 <div className="contact-wrapper">
                     <motion.div
                         className="contact-card glass-card"
@@ -103,9 +132,11 @@ const ContactForm = () => {
                                 className="btn-send-message"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
+                                disabled={status === 'loading'}
+                                style={{ opacity: status === 'loading' ? 0.7 : 1 }}
                             >
-                                <span>SEND MESSAGE</span>
-                                <FaPaperPlane className="send-icon" />
+                                <span>{status === 'loading' ? 'SENDING...' : 'SEND MESSAGE'}</span>
+                                {status !== 'loading' && <FaPaperPlane className="send-icon" />}
                             </motion.button>
                         </form>
                     </motion.div>
