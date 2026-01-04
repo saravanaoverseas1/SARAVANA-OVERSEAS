@@ -21,13 +21,7 @@ const About = () => {
                         as simple as ordering online. We saw businesses struggling with complex logistics, opaque pricing,
                         and unreliable partners. So we built a solution.
                     </p>
-                    <p>
-                        <strong>What Makes Us Different:</strong><br />
-                        <strong>Tech-First Approach:</strong> Real-time tracking, automated documentation, and AI-powered route optimization<br />
-                        <strong>Global Network:</strong> Strategic partnerships across 50+ countries<br />
-                        <strong>Transparent Pricing:</strong> No hidden fees, no surprises<br />
-                        <strong>Speed & Reliability:</strong> Faster delivery times with 99.5% on-time performance
-                    </p>
+
                     <p>
                         We're a lean, agile team of logistics experts, tech innovators, and trade enthusiasts working
                         from our headquarters in Coimbatore, Tamil Nadu. Every day, we're pushing boundaries and

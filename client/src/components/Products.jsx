@@ -8,31 +8,31 @@ const Products = () => {
             id: 'machinery-and-vehicles',
             name: 'Machinery and Vehicles',
             description: 'Industrial tractors, excavators, and heavy-duty transport vehicles.',
-            image: '/machinery_vehicles_collage_1767517463792.png'
+            image: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2070&auto=format&fit=crop'
         },
         {
             id: 'machinery-and-tools',
             name: 'Machinery and Tools',
-            description: 'Precision engineering tools and specialized workshop equipment.',
-            image: 'https://images.unsplash.com/photo-1504917595217-d4dc5be6b22b?q=80&w=2070&auto=format&fit=crop'
+            description: 'Precision engineering tools including spanners, screw drivers, motors, and specialized workshop equipment.',
+            image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop'
         },
         {
             id: 'agri-commodities',
             name: 'Agri Commodities',
             description: 'Fresh vegetables, seasonal fruits, premium grains, and cereals.',
-            image: '/agro_commodities_collage_1767517406330.png'
+            image: 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?q=80&w=2070&auto=format&fit=crop'
         },
         {
             id: 'general-trading',
             name: 'General Trading',
             description: 'Diverse range of consumer electronics, appliances, and lifestyle products.',
-            image: '/general_trading_collage_1767517445112.png'
+            image: 'https://images.unsplash.com/photo-1604719312566-b7cb07743818?q=80&w=2070&auto=format&fit=crop'
         },
         {
             id: 'handicrafts',
             name: 'Handicrafts',
             description: 'Intricate palm products, handmade dolls, and traditional terracotta art.',
-            image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop'
+            image: 'https://images.unsplash.com/photo-1584143257657-3f338d3abcc4?q=80&w=2070&auto=format&fit=crop'
         },
         {
             id: 'spices',
@@ -43,8 +43,8 @@ const Products = () => {
         {
             id: 'handlooms-products',
             name: 'Handlooms Products',
-            description: 'Exquisite hand-woven textiles and traditional artisanal fabrics.',
-            image: 'https://images.unsplash.com/photo-1606041011872-596597976b25?q=80&w=2070&auto=format&fit=crop'
+            description: 'Exquisite hand-woven textiles, including bedsheets, sweaters, and traditional artisanal fabrics.',
+            image: 'https://images.unsplash.com/photo-1629853387693-02fba7376c64?q=80&w=2070&auto=format&fit=crop'
         }
     ];
 
@@ -61,7 +61,7 @@ const Products = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    Our Collections
+                    Our Products
                 </motion.h2>
 
                 <div className="product-category-grid-modern">

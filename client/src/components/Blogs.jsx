@@ -52,24 +52,33 @@ const Blogs = () => {
                     {blogPosts.map((post, index) => (
                         <motion.article
                             key={post.id}
-                            className="blog-card"
+                            className="flip-card"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
-                            <div className="blog-image">
-                                <img src={post.image} alt={post.title} loading="lazy" />
-                                <span className="blog-category">{post.category}</span>
-                            </div>
-                            <div className="blog-content">
-                                <div className="blog-meta">
-                                    <span className="blog-date">{post.date}</span>
-                                    <span className="blog-author">By {post.author}</span>
+                            <div className="flip-card-inner">
+                                {/* Front Side */}
+                                <div className="flip-card-front">
+                                    <div className="blog-image">
+                                        <img src={post.image} alt={post.title} loading="lazy" />
+                                        <span className="blog-category-badge">{post.category}</span>
+                                    </div>
+                                    <div className="blog-content-preview">
+                                        <h3>{post.title}</h3>
+                                        <div style={{ fontSize: '0.8rem', color: '#666', marginTop: '10px' }}>
+                                            {post.date} • {post.author}
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3>{post.title}</h3>
-                                <p>{post.excerpt}</p>
-                                <a href="#blogs" className="read-more">Read More →</a>
+
+                                {/* Back Side */}
+                                <div className="flip-card-back">
+                                    <h3>{post.title}</h3>
+                                    <p>{post.excerpt}</p>
+                                    <a href="#blogs" className="read-more-btn">Read Full Article</a>
+                                </div>
                             </div>
                         </motion.article>
                     ))}

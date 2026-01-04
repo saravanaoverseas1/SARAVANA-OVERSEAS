@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaHome, FaBoxOpen, FaBlog, FaInfoCircle, FaEnvelope } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoImage from '../assets/logo.png';
 import '../index.css';
@@ -55,14 +56,23 @@ const Navbar = () => {
             <div className="container nav-container">
                 {/* Unified Navigation Links */}
                 <div className="nav-glass-wrap">
+                    <Link to="/" className="nav-logo">
+                        <div className="nav-logo-wrapper">
+                            <img src={logoImage} alt="SARAVANA OVERSEAS" className="nav-logo-img" />
+                        </div>
+                        <div className="nav-brand">
+                            <span className="brand-main">SARAVANA</span>
+                            <span className="brand-sub">OVERSEAS</span>
+                        </div>
+                    </Link>
                     <ul className="nav-links desktop-nav">
-                        <li><a href="#home" className="active">Home</a></li>
+                        <li><a href="#home" className="active"><FaHome /> Home</a></li>
                         <li
                             className="dropdown-parent"
                             onMouseEnter={() => setProductsDropdown(true)}
                             onMouseLeave={() => setProductsDropdown(false)}
                         >
-                            <a href="#products">Products</a>
+                            <a href="#products"><FaBoxOpen /> Products</a>
                             <AnimatePresence>
                                 {productsDropdown && (
                                     <motion.div
@@ -92,9 +102,9 @@ const Navbar = () => {
                                 )}
                             </AnimatePresence>
                         </li>
-                        <li><a href="#blogs">Blogs</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact" className="nav-contact-btn">Contact</a></li>
+                        <li><a href="#blogs"><FaBlog /> Blogs</a></li>
+                        <li><a href="#about"><FaInfoCircle /> About Us</a></li>
+                        <li><a href="#contact" className="nav-contact-btn"><FaEnvelope /> Contact</a></li>
                     </ul>
                 </div>
 
