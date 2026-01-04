@@ -45,7 +45,6 @@ function App() {
           <Blogs />
           <Careers />
           <About />
-          <MarqueeTicker />
           <InfoSection />
           <LocationMap />
           <Testimonial />

@@ -16,6 +16,7 @@ const Careers = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
+                    <center><span className="section-tag">Future Opportunities</span></center>
                     <h2 className="section-title heading-serif">Join Our Team</h2>
                     <p className="careers-subtitle">
                         Be part of a dynamic startup revolutionizing global trade. We're looking for passionate individuals

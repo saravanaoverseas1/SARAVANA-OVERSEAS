@@ -34,21 +34,23 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             {/* Scroll Progress Bar */}
             <div className="scroll-progress-container">
-                <div 
-                    className="scroll-progress-bar" 
+                <div
+                    className="scroll-progress-bar"
                     style={{ width: `${scrollProgress}%` }}
                 ></div>
             </div>
 
             <div className="container nav-container">
                 {/* Unified Navigation Links */}
-                <ul className="nav-links desktop-nav">
-                    <li><a href="#home" className="active">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#blogs">Blogs</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact" className="nav-contact-btn">Contact</a></li>
-                </ul>
+                <div className="nav-glass-wrap">
+                    <ul className="nav-links desktop-nav">
+                        <li><a href="#home" className="active">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#blogs">Blogs</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact" className="nav-contact-btn">Contact</a></li>
+                    </ul>
+                </div>
 
                 {/* Hamburger Menu Button (Mobile) */}
                 <button

@@ -74,17 +74,18 @@ const LocationMap = () => {
                     </motion.div>
 
                     <motion.div
-                        className="map-container"
+                        className="map-card glass-card"
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
+                        style={{ padding: '0', overflow: 'hidden' }} /* Map should fill the card */
                     >
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.4!2d77.0!3d11.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAwJzAwLjAiTiA3N8KwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
                             width="100%"
                             height="100%"
-                            style={{ border: 0, borderRadius: '16px' }}
+                            style={{ border: 0, display: 'block' }}
                             allowFullScreen=""
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"

@@ -37,6 +37,7 @@ const Blogs = () => {
     return (
         <section className="section-padding blogs-section" id="blogs">
             <div className="container">
+                <center><span className="section-tag">Logistics Insights</span></center>
                 <motion.h2
                     className="section-title heading-serif"
                     initial={{ opacity: 0, y: 30 }}
