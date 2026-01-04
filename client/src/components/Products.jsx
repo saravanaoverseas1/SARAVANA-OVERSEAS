@@ -61,7 +61,7 @@ const Products = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    Premium Trade Portfolio
+                    Our Collections
                 </motion.h2>
 
                 <div className="product-category-grid-modern">
