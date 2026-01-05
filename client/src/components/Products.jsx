@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 const Products = () => {
     const products = [
         {
-            id: 'machinery-and-vehicles',
+            id: 'machinery-vehicles',
             name: 'Machinery and Vehicles',
             description: 'Industrial tractors, excavators, and heavy-duty transport vehicles.',
             image: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2070&auto=format&fit=crop'
         },
         {
-            id: 'machinery-and-tools',
+            id: 'machinery-tools',
             name: 'Machinery and Tools',
             description: 'Precision engineering tools including spanners, screw drivers, motors, and specialized workshop equipment.',
             image: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=2070&auto=format&fit=crop'
@@ -29,7 +29,7 @@ const Products = () => {
             image: 'https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=2101&auto=format&fit=crop'
         },
         {
-            id: 'hand crafts',
+            id: 'handicrafts',
             name: 'Hand Crafts',
             description: 'Palm base, holy cross, wooden toys and traditional terracotta art.',
             image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop'
@@ -74,7 +74,7 @@ const Products = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
-                            <Link to={`/product/${product.id}`} className="card-link-wrap">
+                            <a href={`/${product.id}`} className="card-link-wrap">
                                 <div className="modern-card-image">
                                     <img src={product.image} alt={product.name} loading="lazy" />
                                     <div className="modern-card-overlay">
@@ -85,7 +85,7 @@ const Products = () => {
                                     <h3>{product.name}</h3>
                                     <p>{product.description}</p>
                                 </div>
-                            </Link>
+                            </a>
                         </motion.div>
                     ))}
                 </div>

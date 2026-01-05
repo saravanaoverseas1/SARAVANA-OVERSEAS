@@ -88,34 +88,34 @@ const Navbar = () => {
                                         transition={{ duration: 0.3, ease: "easeOut" }}
                                     >
                                         <div className="dropdown-grid-premium">
-                                            <Link to="/machinery-vehicles" className="dropdown-item-premium" onClick={() => setProductsDropdown(false)}>
+                                            <a href="/machinery-vehicles" className="dropdown-item-premium">
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
                                                 <span className="item-text">Farm Machinery and Vehicles</span>
-                                            </Link>
-                                            <Link to="/machinery-tools" className="dropdown-item-premium" onClick={() => setProductsDropdown(false)}>
+                                            </a>
+                                            <a href="/machinery-tools" className="dropdown-item-premium">
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
                                                 <span className="item-text">Farm Equipment and Tools</span>
-                                            </Link>
-                                            <Link to="/agri-commodities" className="dropdown-item-premium" onClick={() => setProductsDropdown(false)}>
+                                            </a>
+                                            <a href="/agri-commodities" className="dropdown-item-premium">
                                                 <div className="item-icon-wrapper"><FaGlobe /></div>
                                                 <span className="item-text">Agri Commodities</span>
-                                            </Link>
-                                            <Link to="/general-trading" className="dropdown-item-premium" onClick={() => setProductsDropdown(false)}>
+                                            </a>
+                                            <a href="/general-trading" className="dropdown-item-premium">
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
                                                 <span className="item-text">General Trading</span>
-                                            </Link>
-                                            <Link to="/handicrafts" className="dropdown-item-premium" onClick={() => setProductsDropdown(false)}>
+                                            </a>
+                                            <a href="/handicrafts" className="dropdown-item-premium">
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
                                                 <span className="item-text">Hand crafts</span>
-                                            </Link>
-                                            <Link to="/spices" className="dropdown-item-premium" onClick={() => setProductsDropdown(false)}>
+                                            </a>
+                                            <a href="/spices" className="dropdown-item-premium">
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
                                                 <span className="item-text">Spices</span>
-                                            </Link>
-                                            <Link to="/handlooms-products" className="dropdown-item-premium" onClick={() => setProductsDropdown(false)}>
+                                            </a>
+                                            <a href="/handlooms-products" className="dropdown-item-premium">
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
                                                 <span className="item-text">Handlooms Products</span>
-                                            </Link>
+                                            </a>
                                         </div>
                                     </motion.div>
                                 )}
@@ -155,13 +155,13 @@ const Navbar = () => {
                                 <li className="mobile-submenu">
                                     <span className="mobile-submenu-title">Products</span>
                                     <ul className="mobile-submenu-items">
-                                        <li><Link to="/machinery-vehicles" onClick={closeMobileMenu}>Farm Machinery & Vehicles</Link></li>
-                                        <li><Link to="/machinery-tools" onClick={closeMobileMenu}>Farm Equipment & Tools</Link></li>
-                                        <li><Link to="/agri-commodities" onClick={closeMobileMenu}>Agri Commodities</Link></li>
-                                        <li><Link to="/general-trading" onClick={closeMobileMenu}>General Trading</Link></li>
-                                        <li><Link to="/handicrafts" onClick={closeMobileMenu}>Hand crafts</Link></li>
-                                        <li><Link to="/spices" onClick={closeMobileMenu}>Spices</Link></li>
-                                        <li><Link to="/handlooms-products" onClick={closeMobileMenu}>Handlooms Products</Link></li>
+                                        <li><a href="/machinery-vehicles">Farm Machinery & Vehicles</a></li>
+                                        <li><a href="/machinery-tools">Farm Equipment & Tools</a></li>
+                                        <li><a href="/agri-commodities">Agri Commodities</a></li>
+                                        <li><a href="/general-trading">General Trading</a></li>
+                                        <li><a href="/handicrafts">Hand crafts</a></li>
+                                        <li><a href="/spices">Spices</a></li>
+                                        <li><a href="/handlooms-products">Handlooms Products</a></li>
                                     </ul>
                                 </li>
 

@@ -24,7 +24,7 @@ const Handicrafts = () => {
 
     return (
         <div className="product-details-page">
-            <Link to="/" className="back-link" style={{
+            <a href="/" className="back-link" style={{
                 position: 'fixed',
                 top: '30px',
                 left: '30px',
@@ -47,7 +47,7 @@ const Handicrafts = () => {
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
             >
                 <FaArrowLeft /> Back to Home
-            </Link>
+            </a>
 
             <header className="details-header" style={{ backgroundImage: `url(${productData.image})` }}>
                 <div className="details-header-overlay">
@@ -114,9 +114,9 @@ const Handicrafts = () => {
                                 </div>
                             </div>
 
-                            <Link to="/#contact" className="btn-send-message inquiry-btn">
+                            <a href="/#contact" className="btn-send-message inquiry-btn">
                                 INQUIRE NOW <FaCheckCircle />
-                            </Link>
+                            </a>
                         </motion.div>
                     </div>
                 </div>
