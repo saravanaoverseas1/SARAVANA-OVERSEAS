@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaBoxOpen, FaBlog, FaInfoCircle, FaEnvelope } from 'react-icons/fa';
+import { FaHome, FaBoxOpen, FaBlog, FaInfoCircle, FaEnvelope, FaGlobe, FaBars } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import logoImage from '../assets/logo.png';
 import '../index.css';
 
 const Navbar = () => {
@@ -56,36 +55,9 @@ const Navbar = () => {
             <div className="container nav-container">
                 {/* Unified Navigation Links */}
                 <div className="nav-glass-wrap">
-                    <Link to="/" className="nav-logo">
-                        <motion.div
-                            className="nav-logo-wrapper"
-                            animate={{
-                                y: [0, -5, 0],
-                                rotate: [0, 5, -5, 0]
-                            }}
-                            transition={{
-                                y: {
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                    repeatType: "loop"
-                                },
-                                rotate: {
-                                    duration: 4,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                    repeatType: "loop"
-                                }
-                            }}
-                            whileHover={{ scale: 1.1, rotate: -5 }}
-                        >
-                            <img src={logoImage} alt="SARAVANA OVERSEAS" className="nav-logo-img" />
-                        </motion.div>
-                        <div className="nav-brand">
-                            <span className="brand-main">SARAVANA</span>
-                            <span className="brand-sub">OVERSEAS</span>
-                        </div>
-                    </Link>
+                    <div className="nav-logo-icon-only">
+                        <FaGlobe className="globe-brand-icon" />
+                    </div>
                     <ul className="nav-links desktop-nav">
                         <li><a href="#home" className="active"><FaHome /> Home</a></li>
                         <li
@@ -97,24 +69,24 @@ const Navbar = () => {
                             <AnimatePresence>
                                 {productsDropdown && (
                                     <motion.div
-                                        className="modern-dropdown"
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 10 }}
-                                        transition={{ duration: 0.2 }}
+                                        className="modern-dropdown-premium"
+                                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                                        exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                                        transition={{ duration: 0.3, ease: "easeOut" }}
                                     >
-                                        <div className="dropdown-arrow"></div>
-                                        <div className="dropdown-list">
+                                        <div className="dropdown-grid-premium">
                                             {categories.map((cat, i) => {
                                                 const slug = cat.toLowerCase().replace(/ /g, '-').replace('&', 'and');
                                                 return (
                                                     <Link
                                                         key={i}
                                                         to={`/product/${slug}`}
-                                                        className={`dropdown-link ${i === 0 ? 'highlight-item' : ''}`}
+                                                        className="dropdown-item-premium"
                                                         onClick={() => setProductsDropdown(false)}
                                                     >
-                                                        {cat}
+                                                        <div className="item-dot"></div>
+                                                        <span className="item-text">{cat}</span>
                                                     </Link>
                                                 );
                                             })}
