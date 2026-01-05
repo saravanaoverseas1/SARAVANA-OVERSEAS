@@ -381,7 +381,8 @@ ul {
   }
 
   .nav-container {
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 20px;
     padding: 0 20px;
     width: 100%;
   }
