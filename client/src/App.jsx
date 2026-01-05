@@ -2,22 +2,15 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GlobalVideoBackground from './components/GlobalVideoBackground';
 import Navbar from './components/Navbar';
-import ProductDetails from './components/ProductDetails';
+import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
-// Lazy load components for performance
-const Hero = lazy(() => import('./components/Hero'));
-const InfoSection = lazy(() => import('./components/InfoSection'));
-const Products = lazy(() => import('./components/Products'));
-const Gallery = lazy(() => import('./components/Gallery'));
-const Blogs = lazy(() => import('./components/Blogs'));
-const Careers = lazy(() => import('./components/Careers'));
-const About = lazy(() => import('./components/About'));
-const MarqueeTicker = lazy(() => import('./components/MarqueeTicker'));
-const Testimonial = lazy(() => import('./components/Testimonial'));
-const LocationMap = lazy(() => import('./components/LocationMap'));
-const ContactForm = lazy(() => import('./components/ContactForm'));
-const Footer = lazy(() => import('./components/Footer'));
+// Eager load Home Page components to avoid waterfalls/flicker
+import HomePage from './components/HomePage';
+
+// Keep ProductDetails lazy as it is a separate route
+const ProductDetails = lazy(() => import('./components/ProductDetails'));
+const Footer = lazy(() => import('./components/Footer')); // Can stay lazy or be eager
 const WhatsAppFloat = lazy(() => import('./components/WhatsAppFloat'));
 
 // Modern, minimalist loading state
@@ -33,30 +26,16 @@ const LoadingScreen = () => (
   </div>
 );
 
-const Home = () => (
-  <>
-    <Hero />
-    <Products />
-    <Gallery />
-    <Blogs />
-    <Careers />
-    <About />
-    <InfoSection />
-    {/* <LocationMap /> - Map moved to ContactForm */}
-    <Testimonial />
-    <ContactForm />
-  </>
-);
-
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <GlobalVideoBackground />
         <Navbar />
         <Suspense fallback={<LoadingScreen />}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/product/:productId" element={<ProductDetails />} />
           </Routes>
           <Footer />

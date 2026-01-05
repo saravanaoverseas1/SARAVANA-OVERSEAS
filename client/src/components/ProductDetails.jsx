@@ -109,12 +109,34 @@ const ProductDetails = () => {
 
     return (
         <div className="product-details-page">
+            <Link to="/" className="back-link" style={{
+                position: 'fixed',
+                top: '30px',
+                left: '30px',
+                zIndex: 1000,
+                background: 'rgba(255,255,255,0.9)',
+                padding: '12px 24px',
+                borderRadius: '50px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                color: '#1a1a1a',
+                fontWeight: '600',
+                textDecoration: 'none',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255,255,255,0.5)',
+                transition: 'transform 0.3s ease'
+            }}
+                onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
+                onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
+            >
+                <FaArrowLeft /> Back to Home
+            </Link>
+
             <header className="details-header" style={{ backgroundImage: `url(${currentProduct.image})` }}>
                 <div className="details-header-overlay">
                     <div className="container">
-                        <Link to="/" className="back-link">
-                            <FaArrowLeft /> Back to Home
-                        </Link>
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}

@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaHome, FaBoxOpen, FaBlog, FaInfoCircle, FaEnvelope, FaGlobe, FaBars } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../index.css';
 
 const Navbar = () => {
+    const location = useLocation();
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [scrollProgress, setScrollProgress] = useState(0);
     const [productsDropdown, setProductsDropdown] = useState(false);
+
+    // Hide Navbar on product details page
+    if (location.pathname.startsWith('/product/')) return null;
 
     useEffect(() => {
         const handleScroll = () => {

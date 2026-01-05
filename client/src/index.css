@@ -1598,34 +1598,72 @@ section {
 
 /* Grid layouts */
 .info-grid {
+  display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
+  align-items: center;
 }
 
 .product-grid {
+  display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
 }
 
 .gallery-grid {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 }
 
 .footer-grid {
+  display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
 .footer-contact-list {
+  display: grid;
   grid-template-columns: 1fr;
   /* Stack contact info on mobile */
   gap: 20px;
 }
 
 .location-grid {
+  display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
+}
+
+/* Desktop Responsiveness */
+@media (min-width: 900px) {
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+    /* Side-by-side for Logistic Innovation */
+    gap: 60px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-grid {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-contact-list {
+    grid-template-columns: repeat(4, 1fr);
+    /* Side-by-side contact info */
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* Sections */
@@ -2297,5 +2335,34 @@ section {
 
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* Global Typography & Common Tags */
+.section-tag {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(25, 118, 210, 0.1);
+  color: var(--accent-blue);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(25, 118, 210, 0.2);
+}
+
+.heading-serif {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .heading-serif {
+    font-size: 2rem;
   }
 }
