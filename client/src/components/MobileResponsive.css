@@ -1,0 +1,69 @@
+/* Hero Mobile Responsive Fixes */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 60vh;
+    }
+
+    .hero-content {
+        padding-top: 10vh;
+        padding-bottom: 30px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .logo-box-circle {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+    }
+
+    .hero-main-title {
+        font-size: 2.5rem !important;
+        max-width: 95vw;
+        padding: 0 10px;
+    }
+
+    .hero-tagline-italic {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+
+    .location-badge {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
+
+    .hero-btns-group {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .btn-explore-glow {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.9rem;
+        padding: 12px 24px;
+    }
+
+    /* Fix products grid on mobile */
+    .product-grid,
+    .gallery-grid,
+    .info-grid {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* Ensure images don't overflow */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Fix any cards that might overflow */
+    .glass-card,
+    .modern-category-card {
+        max-width: 100%;
+    }
+}

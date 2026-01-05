@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+@import './components/MobileResponsive.css';
 
 :root {
   --primary-color: #E3F2FD;
@@ -34,6 +35,19 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
   position: relative;
+  max-width: 100vw;
+}
+
+/* Prevent horizontal scroll globally */
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 /* Loader Animation */
@@ -110,8 +124,19 @@ ul {
 /* Utilities */
 .container {
   max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-padding {
+    padding: 60px 0;
+  }
 }
 
 .section-padding {
@@ -350,7 +375,18 @@ ul {
   }
 
   .hamburger {
-    display: flex;
+    display: flex !important;
+    position: relative;
+    z-index: 1001;
+  }
+
+  .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-container {
+    background: transparent;
   }
 }
 
@@ -370,10 +406,10 @@ ul {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: #FFFFFF;
+  background: var(--accent-blue);
   border-radius: 3px;
   transition: all 0.3s ease;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .navbar.scrolled .hamburger span {
@@ -468,6 +504,62 @@ ul {
   background: var(--accent-blue);
   color: #FFFFFF;
   transform: translateX(10px);
+}
+
+/* Mobile Submenu Styles */
+.mobile-submenu {
+  margin: 0;
+}
+
+.mobile-submenu-title {
+  display: block;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: default;
+  background: rgba(25, 118, 210, 0.05);
+  margin-bottom: 8px;
+}
+
+.mobile-submenu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.mobile-submenu-items li {
+  margin-bottom: 0;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobile-submenu-items a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 10px 20px 10px 35px;
+  color: var(--text-muted);
+  position: relative;
+}
+
+.mobile-submenu-items a::before {
+  content: '→';
+  position: absolute;
+  left: 20px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-submenu-items a:hover {
+  background: rgba(25, 118, 210, 0.1);
+  color: var(--accent-blue);
+  padding-left: 40px;
+}
+
+.mobile-submenu-items a:hover::before {
+  opacity: 1;
+  left: 25px;
 }
 
 /* Mobile Menu Overlay */

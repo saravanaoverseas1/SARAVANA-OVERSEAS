@@ -90,7 +90,7 @@ const Navbar = () => {
                                         <div className="dropdown-grid-premium">
                                             <Link to="/machinery-vehicles" className="dropdown-item-premium" onClick={() => setProductsDropdown(false)}>
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
-                                                <span className="item-text">Machinery and Vehicles</span>
+                                                <span className="item-text">Farm Machinery and Vehicles</span>
                                             </Link>
                                             <Link to="/machinery-tools" className="dropdown-item-premium" onClick={() => setProductsDropdown(false)}>
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
@@ -149,11 +149,25 @@ const Navbar = () => {
                             transition={{ type: "tween", duration: 0.3 }}
                         >
                             <ul className="mobile-nav-links">
-                                <li><a href="#home" onClick={closeMobileMenu}>Home</a></li>
-                                <li><a href="#products" onClick={closeMobileMenu}>Products</a></li>
-                                <li><a href="#blogs" onClick={closeMobileMenu}>Blogs</a></li>
-                                <li><a href="#about" onClick={closeMobileMenu}>About Us</a></li>
-                                <li><a href="#contact" onClick={closeMobileMenu}>Contact</a></li>
+                                <li><a href="/#home" onClick={closeMobileMenu}>Home</a></li>
+
+                                {/* Products Submenu */}
+                                <li className="mobile-submenu">
+                                    <span className="mobile-submenu-title">Products</span>
+                                    <ul className="mobile-submenu-items">
+                                        <li><Link to="/machinery-vehicles" onClick={closeMobileMenu}>Farm Machinery & Vehicles</Link></li>
+                                        <li><Link to="/machinery-tools" onClick={closeMobileMenu}>Farm Equipment & Tools</Link></li>
+                                        <li><Link to="/agri-commodities" onClick={closeMobileMenu}>Agri Commodities</Link></li>
+                                        <li><Link to="/general-trading" onClick={closeMobileMenu}>General Trading</Link></li>
+                                        <li><Link to="/handicrafts" onClick={closeMobileMenu}>Hand crafts</Link></li>
+                                        <li><Link to="/spices" onClick={closeMobileMenu}>Spices</Link></li>
+                                        <li><Link to="/handlooms-products" onClick={closeMobileMenu}>Handlooms Products</Link></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="/#blogs" onClick={closeMobileMenu}>Blogs</a></li>
+                                <li><a href="/#about" onClick={closeMobileMenu}>About Us</a></li>
+                                <li><a href="/#contact" onClick={closeMobileMenu}>Contact</a></li>
                             </ul>
                         </motion.div>
                     )}

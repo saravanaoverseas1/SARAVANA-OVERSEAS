@@ -9,13 +9,13 @@ const MachineryVehicles = () => {
     }, []);
 
     const productData = {
-        title: 'Machinery and Vehicles',
-        subtitle: 'Industrial Excellence & Transport Solutions',
+        title: 'Farm Machinery and Vehicles',
+        subtitle: 'Agricultural Vehicles & Heavy Machinery',
         image: '/machinery_vehicles_collage_1767517463792.png',
-        description: 'We provide heavy-duty machinery and versatile vehicles for diverse industrial applications. From construction equipment to agricultural tractors, our sourcing ensures peak performance and durability.',
-        features: ['Heavy Construction Equipment', 'Agricultural Machinery', 'Commercial Vehicles', 'Quality Inspected'],
+        description: 'We provide heavy-duty farm machinery and agricultural vehicles for diverse farming applications. From tractors and combine harvesters to specialty farm vehicles, our sourcing ensures peak performance and durability for modern agriculture.',
+        features: ['Agricultural Tractors', 'Combine Harvesters', 'Farm Utility Vehicles', 'Quality Inspected'],
         specs: {
-            type: 'Industrial/Agricultural',
+            type: 'Agricultural/Farm Vehicles',
             standards: 'ISO 9001 Certified',
             availability: 'Global Export',
             warranty: 'Manufacturer Standard'
