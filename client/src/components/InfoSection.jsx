@@ -28,7 +28,7 @@ const InfoSection = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="section-tag">Logistics Innovation</span>
+                        <span className="section-tag">Our Innovation</span>
                         <h2 className="heading-serif">
                             Redefining{' '}
                             <span className="dynamic-word-container">

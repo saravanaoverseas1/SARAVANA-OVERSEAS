@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaCalendarAlt, FaUser, FaArrowRight } from 'react-icons/fa';
 import '../index.css';
 import '../sections.css';
 
@@ -7,77 +8,87 @@ const Blogs = () => {
     const blogPosts = [
         {
             id: 1,
-            title: 'The Future of Global Trade: Trends to Watch in 2025',
-            excerpt: 'Discover how AI, blockchain, and sustainable logistics are reshaping international commerce.',
-            date: 'December 20, 2024',
-            author: 'Saravana Team',
-            image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2070&auto=format&fit=crop',
-            category: 'Industry Insights'
-        },
-        {
-            id: 2,
-            title: 'How to Choose the Right Logistics Partner',
-            excerpt: 'Key factors to consider when selecting a logistics provider for your international shipments.',
-            date: 'December 15, 2024',
-            author: 'Saravana Team',
-            image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop',
-            category: 'Business Tips'
-        },
-        {
-            id: 3,
-            title: 'Navigating Customs Regulations: A Beginner\'s Guide',
-            excerpt: 'Everything you need to know about customs documentation and compliance for smooth shipping.',
-            date: 'December 10, 2024',
-            author: 'Saravana Team',
-            image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop',
-            category: 'Guides'
+            title: "Navigating Customs Regulations: A Beginner's Guide",
+            excerpt: "Everything you need to know about customs documentation and compliance for smooth shipping.",
+            date: "December 10, 2024",
+            author: "Saravana Team",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
+            category: "Guides"
         }
     ];
 
     return (
         <section className="section-padding blogs-section" id="blogs">
             <div className="container">
-                <center><span className="section-tag">Logistics Insights</span></center>
-                <motion.h2
-                    className="section-title heading-serif"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
-                    Recent Blogs
-                </motion.h2>
+                <div className="section-header-modern">
+                    <motion.span
+                        className="section-tag"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        Industry Insights
+                    </motion.span>
+                    <motion.h2
+                        className="section-title heading-serif"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        Our Recent Blog
+                    </motion.h2>
+                    <p className="section-desc">Stay updated with professional guidance and market analysis from our expert trade team.</p>
+                </div>
 
-                <div className="blogs-grid">
-                    {blogPosts.map((post, index) => (
+                <div className="featured-proper-container">
+                    {blogPosts.map((post) => (
                         <motion.article
                             key={post.id}
-                            className="flip-card"
-                            initial={{ opacity: 0, y: 50 }}
+                            className="featured-proper-card"
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            transition={{ duration: 0.8 }}
                         >
-                            <div className="flip-card-inner">
-                                {/* Front Side */}
-                                <div className="flip-card-front">
-                                    <div className="blog-image">
+                            <div className="featured-proper-inner">
+                                {/* Front Side: High Impact Split Layout */}
+                                <div className="featured-proper-front">
+                                    <div className="featured-proper-image">
                                         <img src={post.image} alt={post.title} loading="lazy" />
-                                        <span className="blog-category-badge">{post.category}</span>
+                                        <div className="featured-category-badge">{post.category}</div>
                                     </div>
-                                    <div className="blog-content-preview">
-                                        <h3>{post.title}</h3>
-                                        <div style={{ fontSize: '0.8rem', color: '#666', marginTop: '10px' }}>
-                                            {post.date} • {post.author}
+                                    <div className="featured-proper-intro">
+                                        <div className="blog-card-meta">
+                                            <span><FaCalendarAlt /> {post.date}</span>
+                                            <span><FaUser /> {post.author}</span>
+                                        </div>
+                                        <h3 className="heading-serif featured-proper-title">{post.title}</h3>
+                                        <p className="featured-proper-excerpt-front">{post.excerpt}</p>
+                                        <div className="flip-instruction">
+                                            <span>Read More</span>
+                                            <FaArrowRight className="bounce-arrow" />
                                         </div>
                                     </div>
                                 </div>
 
-                                {/* Back Side */}
-                                <div className="flip-card-back">
-                                    <h3>{post.title}</h3>
-                                    <p>{post.excerpt}</p>
-                                    <a href="#blogs" className="read-more-btn">Read Full Article</a>
+                                {/* Back Side: Detailed Reading Layout */}
+                                <div className="featured-proper-back">
+                                    <div className="featured-back-content">
+                                        <span className="section-tag">Deep Dive</span>
+                                        <h3 className="heading-serif">{post.title}</h3>
+                                        <div className="premium-divider"></div>
+                                        <p className="detailed-article-text">
+                                            {post.excerpt} Our expert team at Saravana Overseas focuses on navigating the complexities
+                                            of {post.title.toLowerCase()}. We provide the strategic framework needed for businesses
+                                            to excel in the global {post.category.toLowerCase()} sector.
+                                        </p>
+                                        <div className="back-button-wrapper">
+                                            <a href="#blogs" className="btn-proper-read">
+                                                Visit Article Page <FaArrowRight />
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </motion.article>

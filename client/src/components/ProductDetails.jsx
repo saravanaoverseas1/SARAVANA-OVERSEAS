@@ -12,8 +12,8 @@ const ProductDetails = () => {
 
     // Product data mapping based on ID or Name
     const productData = {
-        'machinery-and-vehicles': {
-            title: 'Machinery and Vehicles',
+        'Farm machinery-and-vehicles': {
+            title: 'Farm Machinery and Vehicles',
             subtitle: 'Industrial Excellence & Transport Solutions',
             image: '/machinery_vehicles_collage_1767517463792.png',
             description: 'We provide heavy-duty machinery and versatile vehicles for diverse industrial applications. From construction equipment to agricultural tractors, our sourcing ensures peak performance and durability.',
@@ -26,7 +26,7 @@ const ProductDetails = () => {
             }
         },
         'machinery-and-tools': {
-            title: 'Machinery and Tools',
+            title: 'Farm Machinery and Tools',
             subtitle: 'Precision Engineering Tools',
             image: 'https://images.unsplash.com/photo-1504917595217-d4dc5be6b22b?q=80&w=2070&auto=format&fit=crop',
             description: 'A comprehensive range of precision tools and specialized machinery for workshops and manufacturing plants. Our tools are engineered for accuracy and longevity.',
