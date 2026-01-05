@@ -75,7 +75,7 @@ const Hero = () => {
                                 delay: index * 0.1,
                             }}
                         >
-                            {letter === " " ? "\u00A0" : letter}
+                            {letter === " " ? " " : letter}
                         </motion.span>
                     ))}
                 </div>
@@ -94,7 +94,7 @@ const Hero = () => {
                     className="location-badge"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 1 }}
+                    transition={{ duration: 0.6, delay: 0.7 }}
                 >
                     <FaMapMarkerAlt />
                     <span>Tamil Nadu | Global Reach</span>
@@ -105,7 +105,7 @@ const Hero = () => {
                     className="hero-btn-container"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 1.2 }}
+                    transition={{ duration: 0.6, delay: 0.9 }}
                 >
                     <motion.a
                         href="#products"

@@ -527,7 +527,8 @@ ul {
 
 /* New Hero Redesign (Matching Image Style) */
 .hero {
-  height: 100vh;
+  min-height: 50vh;
+  /* height: 100vh; Removed to allow content to grow */
   position: relative;
   display: flex;
   align-items: center;
@@ -568,8 +569,9 @@ ul {
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  padding-top: 250px;
-  /* Push content down below navbar */
+  padding-top: 15vh;
+  padding-bottom: 50px;
+  /* Push content down below navbar but allow scrolling */
 }
 
 .logo-box-circle {
@@ -606,8 +608,11 @@ ul {
   letter-spacing: 2px;
   margin: 0;
   line-height: 1;
-  line-height: 1;
   color: #FFFFFF;
+  word-wrap: break-word;
+  /* Ensure wrapping */
+  max-width: 90vw;
+  /* Prevent overflow */
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -641,7 +646,7 @@ ul {
   align-items: center;
   gap: 12px;
   font-size: 1rem;
-  margin-bottom: 45px;
+  margin-bottom: 10px;
   color: #fff;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -652,7 +657,9 @@ ul {
 }
 
 .hero-btn-container {
-  margin-top: 20px;
+  margin-top: 5px;
+  position: relative;
+  z-index: 100;
 }
 
 .btn-explore-glow {
@@ -662,12 +669,12 @@ ul {
   gap: 20px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  padding: 12px 12px 12px 35px;
+  padding: 8px 8px 8px 25px;
   border-radius: 100px;
   color: #fff;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -699,15 +706,15 @@ ul {
 }
 
 .btn-icon-circle {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   background: #fff;
   color: #1976D2;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   transition: all 0.4s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -1392,8 +1399,10 @@ section {
 
   /* Typography adjustments */
   .hero-content h1 {
-    font-size: 3.5rem !important;
-    line-height: 1.1;
+    font-size: 3rem !important;
+    line-height: 1.2;
+    word-wrap: break-word;
+    max-width: 100%;
   }
 
   .hero-content p {
@@ -1499,11 +1508,11 @@ section {
 
   /* Hero section */
   .hero-content h1 {
-    font-size: 2.5rem !important;
+    font-size: 2.2rem !important;
   }
 
   .hero-content p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     letter-spacing: 0.5px;
   }
 
