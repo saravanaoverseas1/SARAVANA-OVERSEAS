@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaBoxOpen, FaBlog, FaInfoCircle, FaEnvelope, FaGlobe, FaBars } from 'react-icons/fa';
+import { FaHome, FaBoxOpen, FaBlog, FaInfoCircle, FaEnvelope, FaGlobe } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../index.css';
 
 const Navbar = () => {
     const location = useLocation();
+    // Show Navbar only on the Home page
+    if (location.pathname !== '/') return null;
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [scrollProgress, setScrollProgress] = useState(0);
     const [productsDropdown, setProductsDropdown] = useState(false);
-
-    // Hide Navbar on product details page
-    if (location.pathname.startsWith('/product/')) return null;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -57,9 +56,8 @@ const Navbar = () => {
             </div>
 
             <div className="container nav-container">
-                {/* Unified Navigation Links */}
-                <div className="nav-glass-wrap">
-
+                {/* Desktop Navigation Links */}
+                <div className="nav-glass-wrap desktop-only">
                     <ul className="nav-links desktop-nav">
                         <li><a href="#home" className="active"><FaHome /> Home</a></li>
                         <li
@@ -80,12 +78,11 @@ const Navbar = () => {
                                         <div className="dropdown-grid-premium">
                                             {categories.map((cat, i) => {
                                                 const slug = cat.toLowerCase().replace(/ /g, '-').replace('&', 'and');
-                                                // Function to get icon based on category (simple visual mapping)
                                                 const getIcon = (name) => {
                                                     if (name.includes("Vehicles")) return <FaBoxOpen />;
                                                     if (name.includes("Tools")) return <FaBoxOpen />;
                                                     if (name.includes("Agri")) return <FaGlobe />;
-                                                    return <FaBoxOpen />; // Default
+                                                    return <FaBoxOpen />;
                                                 };
 
                                                 return (
@@ -113,43 +110,81 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                {/* Hamburger Menu Button (Mobile) */}
-                <button
-                    className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}
-                    onClick={toggleMobileMenu}
-                    aria-label="Toggle menu"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                {/* Mobile Header (Top Bar) - Structured Solid Design */}
+                <div className="mobile-header-bar">
+                    <div className="mobile-brand-logo">
+                        <FaGlobe className="mobile-brand-icon" />
+                        <span>SARAVANA OVERSEAS</span>
+                    </div>
 
-                {/* Mobile Navigation */}
+                    <button
+                        className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}
+                        onClick={toggleMobileMenu}
+                        aria-label="Toggle menu"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+
+                {/* Mobile Navigation - Redesigned as a Solid Menu Grid (No Glass) */}
                 <AnimatePresence>
                     {mobileMenuOpen && (
-                        <motion.div
-                            className="mobile-menu open"
-                            initial={{ x: '100%' }}
-                            animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
-                            transition={{ type: "tween", duration: 0.3 }}
-                        >
-                            <ul className="mobile-nav-links">
-                                <li><a href="#home" onClick={closeMobileMenu}>Home</a></li>
-                                <li><a href="#products" onClick={closeMobileMenu}>Products</a></li>
-                                <li><a href="#blogs" onClick={closeMobileMenu}>Blogs</a></li>
-                                <li><a href="#about" onClick={closeMobileMenu}>About Us</a></li>
-                                <li><a href="#contact" onClick={closeMobileMenu}>Contact</a></li>
-                            </ul>
-                        </motion.div>
+                        <>
+                            <motion.div
+                                className="mobile-menu-overlay-solid"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                onClick={closeMobileMenu}
+                            />
+                            <motion.div
+                                className="mobile-menu-solid"
+                                initial={{ y: '-100%' }}
+                                animate={{ y: 0 }}
+                                exit={{ y: '-100%' }}
+                                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                            >
+                                <div className="mobile-menu-header">
+                                    <h3>Quick Navigation</h3>
+                                    <button className="close-menu-btn" onClick={closeMobileMenu}>×</button>
+                                </div>
+
+                                <div className="mobile-nav-grid">
+                                    <a href="#home" className="grid-nav-item" onClick={closeMobileMenu}>
+                                        <div className="nav-icon-circle"><FaHome /></div>
+                                        <span>Home</span>
+                                    </a>
+                                    <a href="#products" className="grid-nav-item" onClick={closeMobileMenu}>
+                                        <div className="nav-icon-circle"><FaBoxOpen /></div>
+                                        <span>Products</span>
+                                    </a>
+                                    <a href="#blogs" className="grid-nav-item" onClick={closeMobileMenu}>
+                                        <div className="nav-icon-circle"><FaBlog /></div>
+                                        <span>Blogs</span>
+                                    </a>
+                                    <a href="#about" className="grid-nav-item" onClick={closeMobileMenu}>
+                                        <div className="nav-icon-circle"><FaInfoCircle /></div>
+                                        <span>About Us</span>
+                                    </a>
+                                    <a href="#contact" className="grid-nav-item contact-grid-item" onClick={closeMobileMenu}>
+                                        <div className="nav-icon-circle"><FaEnvelope /></div>
+                                        <span>Inquiry</span>
+                                    </a>
+                                </div>
+
+                                <div className="mobile-menu-footer">
+                                    <p>© 2026 Saravana Overseas</p>
+                                    <div className="mobile-social-shortcuts">
+                                        <FaGlobe /> Exporting Globally
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </>
                     )}
                 </AnimatePresence>
             </div>
-
-            {/* Overlay */}
-            {mobileMenuOpen && (
-                <div className="mobile-menu-overlay" onClick={closeMobileMenu}></div>
-            )}
         </nav>
     );
 };
