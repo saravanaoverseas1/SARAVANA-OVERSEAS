@@ -397,6 +397,10 @@ ul {
 
   .hamburger {
     display: flex;
+    z-index: 2000;
+    /* Ensure on top */
+    margin-left: 10px;
+    /* Slight spacing from logo */
   }
 }
 
@@ -1459,6 +1463,7 @@ section {
   .nav-logo-wrapper {
     width: 40px;
     height: 40px;
+    flex-shrink: 0;
   }
 
   .brand-main {

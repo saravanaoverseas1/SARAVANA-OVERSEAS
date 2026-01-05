@@ -59,24 +59,28 @@ const Hero = () => {
                 </motion.div>
 
                 <div className="hero-main-title">
-                    {Array.from("SARAVANA OVERSEAS").map((letter, index) => (
-                        <motion.span
-                            key={index}
-                            style={{ display: "inline-block" }}
-                            initial={{ y: 0, color: "#ffffff" }}
-                            animate={{
-                                y: [0, -15, 0],
-                                color: ["#ffffff", "#4FC3F7", "#ffffff"], // White -> Light Ocean Blue -> White
-                            }}
-                            transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                                delay: index * 0.1,
-                            }}
-                        >
-                            {letter === " " ? " " : letter}
-                        </motion.span>
+                    {["SARAVANA", "OVERSEAS"].map((word, wordIndex) => (
+                        <span key={wordIndex} style={{ display: "inline-block", whiteSpace: "nowrap", margin: "0 10px" }}> {/* Group letters by word */}
+                            {Array.from(word).map((letter, letterIndex) => (
+                                <motion.span
+                                    key={letterIndex}
+                                    style={{ display: "inline-block" }}
+                                    initial={{ y: 0, color: "#ffffff" }}
+                                    animate={{
+                                        y: [0, -15, 0],
+                                        color: ["#ffffff", "#4FC3F7", "#ffffff"],
+                                    }}
+                                    transition={{
+                                        duration: 3,
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                        delay: (wordIndex * 5 + letterIndex) * 0.1, // Adjusted delay calculation
+                                    }}
+                                >
+                                    {letter}
+                                </motion.span>
+                            ))}
+                        </span>
                     ))}
                 </div>
 
