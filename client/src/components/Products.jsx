@@ -29,7 +29,7 @@ const Products = () => {
             image: 'https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=2101&auto=format&fit=crop'
         },
         {
-            id: 'handicrafts',
+            id: 'hand crafts',
             name: 'Hand Crafts',
             description: 'Palm base, holy cross, wooden toys and traditional terracotta art.',
             image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop'
