@@ -1454,71 +1454,83 @@ section {
     /* Show hamburger menu */
   }
 
-  .logo h2 {
-    font-size: 1.2rem;
+  /* Navbar Responsive */
+  .nav-logo-wrapper {
+    width: 40px;
+    height: 40px;
   }
 
-  /* Grid layouts */
-  .info-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .brand-main {
+    font-size: 1.1rem;
   }
 
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .location-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  /* Sections */
-  .section-padding {
-    padding: 60px 0;
-  }
-
-  .container {
-    padding: 0 20px;
-  }
-
-  /* Info section */
-  .info-visual {
-    height: 300px;
-  }
-
-  /* Buttons */
-  .btn-primary {
-    padding: 14px 28px;
-    font-size: 0.9rem;
-  }
-
-  /* Contact form */
-  .glass-card {
-    padding: 30px 20px;
-  }
-
-  /* Gallery items */
-  .gallery-item {
-    height: 250px;
-  }
-
-  /* Map */
-  .map-container {
-    height: 350px;
+  .brand-sub {
+    font-size: 0.6rem;
   }
 }
+
+
+/* Grid layouts */
+.info-grid {
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.product-grid {
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.gallery-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.footer-grid {
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.location-grid {
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/* Sections */
+.section-padding {
+  padding: 60px 0;
+}
+
+.container {
+  padding: 0 20px;
+}
+
+/* Info section */
+.info-visual {
+  height: 300px;
+}
+
+/* Buttons */
+.btn-primary {
+  padding: 14px 28px;
+  font-size: 0.9rem;
+}
+
+/* Contact form */
+.glass-card {
+  padding: 30px 20px;
+}
+
+/* Gallery items */
+.gallery-item {
+  height: 250px;
+}
+
+/* Map */
+.map-container {
+  height: 350px;
+}
+
 
 /* Mobile (480px and below) */
 @media (max-width: 480px) {
@@ -1562,15 +1574,20 @@ section {
     font-size: 3rem;
   }
 
-  /* Logo */
-  .logo h2 {
-    font-size: 1rem;
+  /* Navbar */
+  .nav-logo-wrapper {
+    width: 35px;
+    height: 35px;
   }
 
-  .logo span {
-    display: block;
-    margin-top: 2px;
+  .brand-main {
+    font-size: 0.9rem;
   }
+
+  .brand-sub {
+    font-size: 0.5rem;
+  }
+
 
   /* Navbar */
   .navbar {
