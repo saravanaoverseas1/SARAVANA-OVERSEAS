@@ -26,7 +26,7 @@ const Products = () => {
             id: 'general-trading',
             name: 'General Trading',
             description: 'Diverse range of consumer electronics, appliances, and lifestyle products.',
-            image: 'https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=2101&auto=format&fit=crop'
+            image: '/general_trading_hero_v2.png'
         },
         {
             id: 'Hand crafts',

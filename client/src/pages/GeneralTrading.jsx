@@ -11,7 +11,7 @@ const GeneralTrading = () => {
     const productData = {
         title: 'General Trading',
         subtitle: 'Your Diverse Sourcing Partner',
-        image: '/general_trading_collage_1767517445112.png',
+        image: '/general_trading_hero_v2.png',
         description: 'Offering a broad spectrum of general merchandise from home appliances to fitness equipment. Our trading network ensures the best value and quality across various sectors.',
         features: ['Home Appliances', 'Fitness Equipment', 'Consumer Electronics', 'Lifestyle Products'],
         specs: {
