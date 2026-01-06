@@ -11,7 +11,7 @@ const MachineryVehicles = () => {
     const productData = {
         title: 'Farm Machinery and Vehicles',
         subtitle: 'Agricultural Vehicles & Heavy Machinery',
-        image: '/machinery_vehicles_collage_1767517463792.png',
+        image: '/farm_machinery_hero.jpg',
         description: 'We provide heavy-duty farm machinery and agricultural vehicles for diverse farming applications. From tractors and combine harvesters to specialty farm vehicles, our sourcing ensures peak performance and durability for modern agriculture.',
         features: ['Agricultural Tractors', 'Combine Harvesters', 'Farm Utility Vehicles', 'Quality Inspected'],
         specs: {

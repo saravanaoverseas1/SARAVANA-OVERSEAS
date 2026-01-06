@@ -8,13 +8,13 @@ const Products = () => {
             id: 'machinery-vehicles',
             name: 'Farm Machinery and Vehicles',
             description: 'Industrial tractors, excavators, and heavy-duty transport vehicles.',
-            image: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2070&auto=format&fit=crop'
+            image: 'farm_machinery_hero.jpg'
         },
         {
             id: 'machinery-tools',
             name: 'Farm Equipments and Tools',
             description: 'Precision engineering tools including spanners, screw drivers, motors, and specialized workshop equipment.',
-            image: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=2070&auto=format&fit=crop'
+            image: '/farm_equipment_tools.jpg'
         },
         {
             id: 'agri-commodities',
@@ -32,7 +32,7 @@ const Products = () => {
             id: 'Hand crafts',
             name: 'Hand Crafts',
             description: 'Palm base, holy cross, wooden toys and traditional terracotta art.',
-            image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop'
+            image: '/handicrafts_hero.jpg'
         },
         {
             id: 'Spices',

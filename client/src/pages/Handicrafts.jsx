@@ -11,7 +11,7 @@ const Handicrafts = () => {
     const productData = {
         title: 'Hand crafts',
         subtitle: 'Preserving Traditional Artistry',
-        image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop',
+        image: '/handicrafts_hero.jpg',
         description: 'Celebrating cultural heritage through exquisite palm products, handmade dolls, and terracotta art. Each piece tells a story of craftsmanship and tradition.',
         features: ['Palm Leaf Products', 'Handmade Dolls', 'Terracotta Pottery', 'Eco-Friendly Materials'],
         specs: {

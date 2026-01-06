@@ -11,7 +11,7 @@ const MachineryTools = () => {
     const productData = {
         title: 'Farm Equipment and Tools',
         subtitle: 'Essential Agricultural Machinery & Tools',
-        image: 'https://images.unsplash.com/photo-1504917595217-d4dc5be6b22b?q=80&w=2070&auto=format&fit=crop',
+        image: '/farm_equipment_tools.jpg',
         description: 'Comprehensive range of farm equipment and agricultural tools designed for modern farming. From tractors and harvesters to hand tools and irrigation equipment, we provide everything needed for efficient farm operations.',
         features: ['Agricultural Tractors', 'Farm Hand Tools', 'Irrigation Equipment', 'Harvesting Machinery'],
         specs: {
