@@ -591,8 +591,7 @@ ul {
 
 /* New Hero Redesign (Matching Image Style) */
 .hero {
-  min-height: 50vh;
-  /* height: 100vh; Removed to allow content to grow */
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
