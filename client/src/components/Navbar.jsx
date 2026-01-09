@@ -159,7 +159,7 @@ const Navbar = () => {
                                         <li><a href="/machinery-tools">Farm Equipment & Tools</a></li>
                                         <li><a href="/agri-commodities">Agri Commodities</a></li>
                                         <li><a href="/general-trading">General Trading</a></li>
-                                        <li><a href="/handicrafts">Hand crafts</a></li>
+                                        <li><a href="/handicrafts">Handicrafts</a></li>
                                         <li><a href="/spices">Spices</a></li>
                                         <li><a href="/handlooms-products">Handlooms Products</a></li>
                                     </ul>
