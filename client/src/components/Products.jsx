@@ -29,8 +29,8 @@ const Products = () => {
             image: '/general_trading_hero_v2.png'
         },
         {
-            id: 'Hand crafts',
-            name: 'Hand Crafts',
+            id: 'Handicrafts',
+            name: 'HandiCrafts',
             description: 'Palm base, holy cross, wooden toys and traditional terracotta art.',
             image: '/handicrafts_hero.jpg'
         },
