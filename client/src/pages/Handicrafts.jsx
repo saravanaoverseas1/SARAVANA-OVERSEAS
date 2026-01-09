@@ -9,7 +9,7 @@ const Handicrafts = () => {
     }, []);
 
     const productData = {
-        title: 'Hand crafts',
+        title: 'Handicrafts',
         subtitle: 'Preserving Traditional Artistry',
         image: '/handicrafts_hero.jpg',
         description: 'Celebrating cultural heritage through exquisite palm products, handmade dolls, and terracotta art. Each piece tells a story of craftsmanship and tradition.',
