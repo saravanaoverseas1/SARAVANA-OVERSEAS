@@ -51,7 +51,7 @@ const Navbar = () => {
         "Machinery and Tools",
         "Agri Commodities",
         "General Trading",
-        "Hand crafts",
+        "Handicrafts",
         "Spices",
         "Handlooms Products"
     ];
@@ -106,7 +106,7 @@ const Navbar = () => {
                                             </a>
                                             <a href="/handicrafts" className="dropdown-item-premium">
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
-                                                <span className="item-text">Hand crafts</span>
+                                                <span className="item-text">Handicrafts</span>
                                             </a>
                                             <a href="/spices" className="dropdown-item-premium">
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
