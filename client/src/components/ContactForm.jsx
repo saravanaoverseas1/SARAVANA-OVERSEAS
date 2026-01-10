@@ -99,14 +99,17 @@ ${formData.name}`;
 
                     {/* Right Column: Location Details */}
                     <motion.div
-                        className="location-info glass-card"
+                        className="location-info presence-card"
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="section-tag" style={{ marginBottom: '15px', display: 'block' }}>Our Presence</span>
-                        <h3 className="heading-serif" style={{ marginBottom: '30px', color: 'var(--accent-blue)' }}>Local Roots, Global Reach</h3>
+                        <div className="presence-header-pill">
+                            <span className="presence-tag">OUR PRESENCE</span>
+                        </div>
+
+                        <h3 className="presence-title">Local Roots, Global Reach</h3>
 
                         <div className="office-locations-grid">
                             <div className="contact-item">
@@ -122,7 +125,7 @@ ${formData.name}`;
                             </div>
 
                             <div className="contact-item">
-                                <FaMapMarkerAlt className="contact-icon" style={{ color: 'var(--accent-gold)' }} />
+                                <FaMapMarkerAlt className="contact-icon gold" />
                                 <div>
                                     <h4>Branch Office</h4>
                                     <p>
@@ -134,7 +137,9 @@ ${formData.name}`;
                             </div>
                         </div>
 
-                        <div className="contact-methods-flex" style={{ marginTop: '30px', display: 'flex', gap: '30px', flexWrap: 'wrap' }}>
+                        <div className="presence-divider"></div>
+
+                        <div className="contact-methods-grid">
                             <div className="contact-item">
                                 <FaPhone className="contact-icon" />
                                 <div>
@@ -219,7 +224,7 @@ ${formData.name}`;
                                     </div>
                                 </div>
 
-                                <div className="input-row" style={{ marginTop: '-10px' }}>
+                                <div className="input-row">
                                     <div className="modern-input-group">
                                         <label><FaPhone /> Contact No</label>
                                         <input

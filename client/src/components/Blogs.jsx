@@ -17,6 +17,13 @@ const Blogs = () => {
         }
     ];
 
+
+    const [flippedId, setFlippedId] = React.useState(null);
+
+    const handleCardClick = (id) => {
+        setFlippedId(flippedId === id ? null : id);
+    };
+
     return (
         <section className="section-padding blogs-section" id="blogs">
             <div className="container">
@@ -50,8 +57,14 @@ const Blogs = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
+                            onClick={() => handleCardClick(post.id)}
                         >
-                            <div className="featured-proper-inner">
+                            <motion.div
+                                className="featured-proper-inner"
+                                initial={false}
+                                animate={{ rotateY: flippedId === post.id ? 180 : 0 }}
+                                transition={{ duration: 0.8, cubicBezier: [0.4, 0, 0.2, 1] }}
+                            >
                                 {/* Front Side: High Impact Split Layout */}
                                 <div className="featured-proper-front">
                                     <div className="featured-proper-image">
@@ -84,19 +97,20 @@ const Blogs = () => {
                                             to excel in the global {post.category.toLowerCase()} sector.
                                         </p>
                                         <div className="back-button-wrapper">
-                                            <a href="#blogs" className="btn-proper-read">
+                                            <a href="#blogs" className="btn-proper-read" onClick={(e) => e.stopPropagation()}>
                                                 Visit Article Page <FaArrowRight />
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </motion.article>
                     ))}
                 </div>
             </div>
         </section>
     );
+
 };
 
 export default Blogs;

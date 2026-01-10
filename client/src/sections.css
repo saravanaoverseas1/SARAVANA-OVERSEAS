@@ -143,185 +143,302 @@
 }
 
 /* Featured Proper Flip Card (Large Horizontal) */
+/* Clean Flip Card Container */
 .featured-proper-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 40px auto;
-    padding: 20px;
-    perspective: 2500px;
+    perspective: 2000px;
 }
 
 .featured-proper-card {
-    height: 480px;
     width: 100%;
+    height: 550px;
+    /* Fixed height is essential for flip */
     cursor: pointer;
+    position: relative;
+    border-radius: 20px;
 }
 
 .featured-proper-inner {
-    position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
     transform-style: preserve-3d;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
-    border-radius: 32px;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy flip */
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
 
-.featured-proper-card:hover .featured-proper-inner {
-    transform: rotateY(180deg);
-}
-
+/* Common Face Styles */
 .featured-proper-front,
 .featured-proper-back {
     position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 32px;
+    border-radius: 20px;
     overflow: hidden;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-/* Front Face: Professional Split Layout */
+/* --- FRONT FACE --- */
 .featured-proper-front {
     display: flex;
+    align-items: stretch;
+    background: #ffffff;
 }
 
 .featured-proper-image {
-    flex: 1.1;
+    flex: 0 0 50%;
     position: relative;
-    height: 100%;
+    overflow: hidden;
 }
 
 .featured-proper-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.featured-proper-card:hover .featured-proper-image img {
+    transform: scale(1.05);
 }
 
 .featured-category-badge {
     position: absolute;
-    top: 25px;
-    left: 25px;
+    top: 30px;
+    left: 30px;
     background: var(--accent-blue);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 12px;
-    font-size: 0.8rem;
+    color: #fff;
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 1px;
     text-transform: uppercase;
-    box-shadow: 0 10px 20px rgba(25, 118, 210, 0.3);
+    padding: 8px 16px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(25, 118, 210, 0.3);
+    z-index: 2;
 }
 
 .featured-proper-intro {
     flex: 1;
-    padding: 50px;
+    padding: 60px 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: white;
+    background: #ffffff;
+}
+
+.blog-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.blog-card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .featured-proper-title {
-    font-size: 2.2rem;
-    color: var(--text-dark);
-    line-height: 1.25;
-    margin: 20px 0;
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: #1e293b;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .featured-proper-excerpt-front {
     font-size: 1.05rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-.flip-instruction {
-    margin-top: auto;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--accent-blue);
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Back Face: Article Detail Layout */
-.featured-proper-back {
-    transform: rotateY(180deg);
-    background: linear-gradient(135deg, #ffffff 0%, #f7fbff 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px;
-}
-
-.featured-back-content {
-    max-width: 750px;
-    text-align: center;
-}
-
-.premium-divider {
-    width: 60px;
-    height: 3px;
-    background: var(--accent-gold);
-    margin: 20px auto 30px;
-}
-
-.detailed-article-text {
-    font-size: 1.15rem;
-    color: var(--text-dark);
+    color: #64748b;
     line-height: 1.7;
     margin-bottom: 40px;
 }
 
-.back-button-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
 
-.btn-proper-read {
-    background: var(--accent-blue);
-    color: white;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 700;
-    text-decoration: none;
-    display: inline-flex;
+.flip-instruction {
+    display: flex;
     align-items: center;
     gap: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+    color: var(--accent-blue);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: auto;
 }
 
-.btn-proper-read:hover {
-    background: var(--accent-gold);
+
+.bounce-arrow {
+    transition: transform 0.3s ease;
+}
+
+.featured-proper-card:hover .bounce-arrow {
     transform: translateX(5px);
 }
 
-/* Proper Responsive Behavior */
-@media (max-width: 950px) {
-    .featured-proper-card {
-        height: auto;
-        min-height: 600px;
-    }
+/* --- BACK FACE --- */
+.featured-proper-back {
+    transform: rotateY(180deg);
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    padding: 60px;
+    text-align: center;
+}
 
-    .featured-proper-front {
-        flex-direction: column;
-    }
+.featured-back-content {
+    max-width: 600px;
+}
 
-    .featured-proper-image {
-        height: 300px;
-    }
+.section-tag {
+    display: inline-block;
+    color: var(--accent-blue);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
 
-    .featured-proper-title {
-        font-size: 1.8rem;
-    }
+.premium-divider {
+    height: 4px;
+    width: 50px;
+    background: var(--accent-gold);
+    border-radius: 2px;
+    margin: 25px auto;
+}
+
+.detailed-article-text {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.btn-proper-read {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent-blue);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(25, 118, 210, 0.25);
+}
+
+.btn-proper-read:hover {
+    background: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* --- MOBILE RESPONSIVE (Vertical Flip) --- */
+.featured-proper-container {
+    max-width: 500px;
+    perspective: 1500px;
+    margin: 20px auto;
+}
+
+.featured-proper-card {
+    height: 500px;
+    /* Reduced from 620px for a more compact, "proper" look */
+    border-radius: 24px;
+    /* Slightly more rounded */
+}
+
+.featured-proper-inner,
+.featured-proper-front,
+.featured-proper-back {
+    border-radius: 24px;
+    /* Ensure all corners match perfectly */
+}
+
+.featured-proper-front {
+    flex-direction: column;
+}
+
+.featured-proper-image {
+    flex: none;
+    height: 200px;
+    /* 40% of card height */
+    width: 100%;
+}
+
+.featured-proper-intro {
+    padding: 25px;
+    /* Reduced padding */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Better vertical alignment */
+    flex: 1;
+}
+
+.featured-proper-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    line-height: 1.25;
+}
+
+.featured-proper-excerpt-front {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.flip-instruction {
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 0.85rem;
+    padding-top: 10px;
+    display: flex !important;
+    opacity: 1 !important;
+    flex-shrink: 0;
+    /* Prevent it from being squashed */
+    margin-top: auto;
+}
+
+.featured-category-badge {
+    top: 15px;
+    left: 15px;
+    font-size: 0.65rem;
+    padding: 5px 10px;
+}
+
+/* Back Face adjustments for mobile */
+.featured-proper-back {
+    padding: 25px;
+}
+
+.detailed-article-text {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+
 }
 
 /* Careers Section */
