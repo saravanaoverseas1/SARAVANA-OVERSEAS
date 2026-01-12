@@ -8,7 +8,6 @@ import './index.css';
 // Lazy load pages for code splitting
 const HomePage = React.lazy(() => import('./components/HomePage'));
 const Footer = React.lazy(() => import('./components/Footer'));
-const WhatsAppFloat = React.lazy(() => import('./components/WhatsAppFloat'));
 
 // Product Pages
 const MachineryVehicles = React.lazy(() => import('./pages/MachineryVehicles'));
@@ -51,7 +50,6 @@ function App() {
             <Route path="/handlooms-products" element={<HandloomsProducts />} />
           </Routes>
           <Footer />
-          <WhatsAppFloat />
         </Suspense>
       </div>
     </Router>

@@ -2030,45 +2030,68 @@ section {
   transform: translateY(-5px);
 }
 
-/* WhatsApp Float Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #25d366;
+/* WhatsApp Float Button - Localized to Hero */
+.hero-whatsapp-float {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background: #25d366;
   color: white;
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 32px;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-  z-index: 1000;
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  z-index: 100;
   cursor: pointer;
-  animation: pulse 2s infinite;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+.hero-whatsapp-float:hover {
+  background: #128c7e;
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-  }
+.whatsapp-tooltip {
+  position: absolute;
+  right: 80px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translateX(10px);
+}
 
-  50% {
-    box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7);
-  }
+.hero-whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
 
-  100% {
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+@media (max-width: 768px) {
+  .hero-whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+  }
+  
+  .whatsapp-tooltip {
+    display: none; /* Hide tooltip on mobile */
   }
 }
+
 
 /* Location Map Section */
 .location-section {

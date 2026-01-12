@@ -6,6 +6,13 @@ import logoImage from '../assets/logo.png';
 import { FaMapMarkerAlt, FaWhatsapp, FaPaperPlane } from 'react-icons/fa';
 
 const Hero = () => {
+    const handleWhatsAppClick = () => {
+        const phoneNumber = '919047385702';
+        const message = encodeURIComponent('Hello Saravana Overseas! I would like to inquire about your services.');
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    };
+
+
     return (
         <section className="hero" id="home">
             {/* Video Background - Local Cargo Ship Video */}
@@ -87,6 +94,21 @@ const Hero = () => {
                     </motion.a>
                 </motion.div>
             </motion.div>
+
+            {/* Floating WhatsApp Button - Localized to Hero */}
+            <motion.div
+                className="hero-whatsapp-float"
+                onClick={handleWhatsAppClick}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+            >
+                <FaWhatsapp />
+                <span className="whatsapp-tooltip">Chat with us</span>
+            </motion.div>
+
 
 
         </section>
