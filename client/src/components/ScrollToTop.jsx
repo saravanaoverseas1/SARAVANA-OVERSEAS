@@ -7,14 +7,28 @@ const ScrollToTop = () => {
     const { pathname } = useLocation();
     const [isVisible, setIsVisible] = useState(false);
 
-    // 1. Reset scroll on route change
+    // Logics to handle scroll reset OR scroll to hash
     useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'instant'
-        });
-    }, [pathname]);
+        if (location.hash) {
+            // If there's a hash, we want to scroll to that element
+            // Use a slight timeout to ensure the DOM is ready
+            const id = location.hash.replace('#', '');
+            const element = document.getElementById(id);
+            if (element) {
+                // We use setTimeout to ensure page has settled
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        } else {
+            // No hash? Just go to top.
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'instant'
+            });
+        }
+    }, [pathname, location.hash]);
 
     // 2. Toggle visibility of the button
     useEffect(() => {

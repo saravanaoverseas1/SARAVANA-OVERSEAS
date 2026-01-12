@@ -151,6 +151,17 @@ ul {
   padding: 100px 0;
   content-visibility: auto;
   contain-intrinsic-size: 1px 1000px;
+  scroll-margin-top: 80px;
+  /* Offset for fixed navbar */
+}
+
+/* Specific section offsets if needed */
+#home,
+#products,
+#blogs,
+#about,
+#contact {
+  scroll-margin-top: 100px;
 }
 
 .heading-serif {
@@ -2086,9 +2097,10 @@ section {
     height: 55px;
     font-size: 28px;
   }
-  
+
   .whatsapp-tooltip {
-    display: none; /* Hide tooltip on mobile */
+    display: none;
+    /* Hide tooltip on mobile */
   }
 }
 
