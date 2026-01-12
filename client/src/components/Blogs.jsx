@@ -87,17 +87,27 @@ const Blogs = () => {
 
                                 {/* Back Side: Detailed Reading Layout */}
                                 <div className="featured-proper-back">
+                                    {/* Mirrored Tag from front to maintain continuity if that's what user wants, 
+                                        but image shows it on the back too */}
+                                    <div className="featured-category-badge">{post.category}</div>
+
                                     <div className="featured-back-content">
-                                        <span className="section-tag">Deep Dive</span>
-                                        <h3 className="heading-serif">{post.title}</h3>
-                                        <div className="premium-divider"></div>
+                                        <div className="back-tag-wrapper">
+                                            <span className="deep-dive-pill">DEEP DIVE</span>
+                                        </div>
+
+                                        <h3 className="heading-serif back-title">{post.title}</h3>
+
+                                        <div className="orange-divider"></div>
+
                                         <p className="detailed-article-text">
                                             {post.excerpt} Our expert team at Saravana Overseas focuses on navigating the complexities
                                             of {post.title.toLowerCase()}. We provide the strategic framework needed for businesses
                                             to excel in the global {post.category.toLowerCase()} sector.
                                         </p>
+
                                         <div className="back-button-wrapper">
-                                            <a href="#blogs" className="btn-proper-read" onClick={(e) => e.stopPropagation()}>
+                                            <a href="#blogs" className="btn-article-pill" onClick={(e) => e.stopPropagation()}>
                                                 Visit Article Page <FaArrowRight />
                                             </a>
                                         </div>
