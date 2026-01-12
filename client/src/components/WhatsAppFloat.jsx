@@ -5,20 +5,6 @@ import '../index.css';
 
 const WhatsAppFloat = () => {
     const location = useLocation();
-    const [isHidden, setIsHidden] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 100) {
-                setIsHidden(true);
-            } else {
-                setIsHidden(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     // Only show on home page
     if (location.pathname !== '/') {
@@ -36,12 +22,6 @@ const WhatsAppFloat = () => {
         <div
             className="whatsapp-float"
             onClick={handleWhatsAppClick}
-            style={{
-                opacity: isHidden ? 0 : 1,
-                pointerEvents: isHidden ? 'none' : 'auto',
-                transform: isHidden ? 'translateY(20px)' : 'translateY(0)',
-                transition: 'all 0.3s ease'
-            }}
         >
             <FaWhatsapp />
         </div>

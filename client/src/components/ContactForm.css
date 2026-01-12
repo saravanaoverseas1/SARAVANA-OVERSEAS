@@ -202,3 +202,46 @@
         font-size: 1.8rem;
     }
 }
+
+/* Additional Mobile Optimizations */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 60px 0 !important;
+    }
+
+    .contact-card {
+        padding: 25px !important;
+    }
+
+    .contact-header h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.3;
+        word-wrap: break-word;
+    }
+
+    .contact-header p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .presence-title {
+        font-size: 1.5rem !important;
+        line-height: 1.3;
+    }
+
+    .contact-item h4 {
+        font-size: 0.95rem;
+    }
+
+    .contact-item p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    /* Ensure notification is visible on mobile */
+    .notification-popup {
+        right: 10px;
+        left: 10px;
+        max-width: calc(100vw - 20px);
+    }
+}

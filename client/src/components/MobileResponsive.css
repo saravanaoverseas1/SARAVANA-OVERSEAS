@@ -1,14 +1,16 @@
 /* Hero Mobile Responsive Fixes */
 @media (max-width: 768px) {
     .hero {
-        min-height: 60vh;
+        min-height: 70vh;
     }
 
     .hero-content {
-        padding-top: 10vh;
+        padding-top: 12vh;
         padding-bottom: 30px;
         padding-left: 16px;
         padding-right: 16px;
+        width: 100%;
+        max-width: 100vw;
     }
 
     .logo-box-circle {
@@ -18,19 +20,29 @@
     }
 
     .hero-main-title {
-        font-size: 2.5rem !important;
+        font-size: 2.2rem !important;
         max-width: 95vw;
         padding: 0 10px;
+        line-height: 1.2 !important;
+        letter-spacing: 1px !important;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     .hero-tagline-italic {
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding: 0 10px;
+        max-width: 90vw;
+        text-align: center;
+        line-height: 1.4;
     }
 
     .location-badge {
         font-size: 0.85rem;
         padding: 8px 16px;
+        max-width: 90vw;
+        text-align: center;
     }
 
     .hero-btns-group {
@@ -65,5 +77,25 @@
     .glass-card,
     .modern-category-card {
         max-width: 100%;
+    }
+
+    /* Ensure all text is readable on mobile */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Fix any potential text overflow */
+    p,
+    span,
+    div {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 }

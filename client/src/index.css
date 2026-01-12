@@ -738,13 +738,17 @@ ul {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 0;
-  line-height: 1;
+  line-height: 1.1;
   color: #FFFFFF;
   word-wrap: break-word;
+  word-break: break-word;
   /* Ensure wrapping */
   max-width: 90vw;
   /* Prevent overflow */
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 @keyframes tide-wave {
