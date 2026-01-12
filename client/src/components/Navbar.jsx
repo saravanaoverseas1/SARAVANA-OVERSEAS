@@ -12,9 +12,18 @@ const Navbar = () => {
     const [productsDropdown, setProductsDropdown] = useState(false);
     const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
 
-    // Hide Navbar on specific pages if needed, but here we enable it everywhere to allow "Contact" routing
-    // const productRoutes = [ ... ];
-    // if (productRoutes.includes(location.pathname)) return null;
+    // Hide Navbar on specific product pages as they have their own back button
+    const productRoutes = [
+        '/machinery-vehicles',
+        '/machinery-tools',
+        '/agri-commodities',
+        '/general-trading',
+        '/handicrafts',
+        '/spices',
+        '/handlooms-products'
+    ];
+
+    if (productRoutes.includes(location.pathname)) return null;
 
     const [activeSection, setActiveSection] = useState('home');
 
@@ -104,13 +113,12 @@ const Navbar = () => {
                 <div className="nav-glass-wrap">
                     <ul className="nav-links desktop-nav">
                         <li>
-                            <Link
-                                to="/#home"
+                            <a
+                                href="/"
                                 className={activeSection === 'home' ? 'active' : ''}
-                                onClick={(e) => handleNavClick(e, 'home')}
                             >
                                 <FaHome /> Home
-                            </Link>
+                            </a>
                         </li>
                         <li
                             className="dropdown-parent"
@@ -134,34 +142,34 @@ const Navbar = () => {
                                         transition={{ duration: 0.3, ease: "easeOut" }}
                                     >
                                         <div className="dropdown-grid-premium">
-                                            <Link to="/machinery-vehicles" className={`dropdown-item-premium ${location.pathname === '/machinery-vehicles' ? 'active' : ''}`} onClick={closeMobileMenu}>
+                                            <a href="/machinery-vehicles" className={`dropdown-item-premium ${location.pathname === '/machinery-vehicles' ? 'active' : ''}`} onClick={closeMobileMenu}>
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
                                                 <span className="item-text">Farm Machinery and Vehicles</span>
-                                            </Link>
-                                            <Link to="/machinery-tools" className={`dropdown-item-premium ${location.pathname === '/machinery-tools' ? 'active' : ''}`} onClick={closeMobileMenu}>
+                                            </a>
+                                            <a href="/machinery-tools" className={`dropdown-item-premium ${location.pathname === '/machinery-tools' ? 'active' : ''}`} onClick={closeMobileMenu}>
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
                                                 <span className="item-text">Farm Equipment and Tools</span>
-                                            </Link>
-                                            <Link to="/agri-commodities" className={`dropdown-item-premium ${location.pathname === '/agri-commodities' ? 'active' : ''}`} onClick={closeMobileMenu}>
+                                            </a>
+                                            <a href="/agri-commodities" className={`dropdown-item-premium ${location.pathname === '/agri-commodities' ? 'active' : ''}`} onClick={closeMobileMenu}>
                                                 <div className="item-icon-wrapper"><FaGlobe /></div>
                                                 <span className="item-text">Agri Commodities</span>
-                                            </Link>
-                                            <Link to="/general-trading" className={`dropdown-item-premium ${location.pathname === '/general-trading' ? 'active' : ''}`} onClick={closeMobileMenu}>
+                                            </a>
+                                            <a href="/general-trading" className={`dropdown-item-premium ${location.pathname === '/general-trading' ? 'active' : ''}`} onClick={closeMobileMenu}>
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
                                                 <span className="item-text">General Trading</span>
-                                            </Link>
-                                            <Link to="/handicrafts" className={`dropdown-item-premium ${location.pathname === '/handicrafts' ? 'active' : ''}`} onClick={closeMobileMenu}>
+                                            </a>
+                                            <a href="/handicrafts" className={`dropdown-item-premium ${location.pathname === '/handicrafts' ? 'active' : ''}`} onClick={closeMobileMenu}>
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
                                                 <span className="item-text">Handicrafts</span>
-                                            </Link>
-                                            <Link to="/spices" className={`dropdown-item-premium ${location.pathname === '/spices' ? 'active' : ''}`} onClick={closeMobileMenu}>
+                                            </a>
+                                            <a href="/spices" className={`dropdown-item-premium ${location.pathname === '/spices' ? 'active' : ''}`} onClick={closeMobileMenu}>
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
                                                 <span className="item-text">Spices</span>
-                                            </Link>
-                                            <Link to="/handlooms-products" className={`dropdown-item-premium ${location.pathname === '/handlooms-products' ? 'active' : ''}`} onClick={closeMobileMenu}>
+                                            </a>
+                                            <a href="/handlooms-products" className={`dropdown-item-premium ${location.pathname === '/handlooms-products' ? 'active' : ''}`} onClick={closeMobileMenu}>
                                                 <div className="item-icon-wrapper"><FaBoxOpen /></div>
                                                 <span className="item-text">Handlooms Products</span>
-                                            </Link>
+                                            </a>
                                         </div>
                                     </motion.div>
                                 )}
@@ -222,13 +230,12 @@ const Navbar = () => {
                         >
                             <ul className="mobile-nav-links">
                                 <li>
-                                    <Link
-                                        to="/#home"
+                                    <a
+                                        href="/"
                                         className={activeSection === 'home' ? 'active' : ''}
-                                        onClick={(e) => handleNavClick(e, 'home')}
                                     >
                                         Home
-                                    </Link>
+                                    </a>
                                 </li>
 
                                 {/* Products Submenu */}
@@ -249,13 +256,13 @@ const Navbar = () => {
                                                 exit={{ height: 0, opacity: 0 }}
                                                 transition={{ duration: 0.3, ease: "easeInOut" }}
                                             >
-                                                <li><Link to="/machinery-vehicles" className={location.pathname === '/machinery-vehicles' ? 'active-link' : ''} onClick={closeMobileMenu}>Farm Machinery & Vehicles</Link></li>
-                                                <li><Link to="/machinery-tools" className={location.pathname === '/machinery-tools' ? 'active-link' : ''} onClick={closeMobileMenu}>Farm Equipment & Tools</Link></li>
-                                                <li><Link to="/agri-commodities" className={location.pathname === '/agri-commodities' ? 'active-link' : ''} onClick={closeMobileMenu}>Agri Commodities</Link></li>
-                                                <li><Link to="/general-trading" className={location.pathname === '/general-trading' ? 'active-link' : ''} onClick={closeMobileMenu}>General Trading</Link></li>
-                                                <li><Link to="/handicrafts" className={location.pathname === '/handicrafts' ? 'active-link' : ''} onClick={closeMobileMenu}>Handicrafts</Link></li>
-                                                <li><Link to="/spices" className={location.pathname === '/spices' ? 'active-link' : ''} onClick={closeMobileMenu}>Spices</Link></li>
-                                                <li><Link to="/handlooms-products" className={location.pathname === '/handlooms-products' ? 'active-link' : ''} onClick={closeMobileMenu}>Handlooms Products</Link></li>
+                                                <li><a href="/machinery-vehicles" className={location.pathname === '/machinery-vehicles' ? 'active-link' : ''} onClick={closeMobileMenu}>Farm Machinery & Vehicles</a></li>
+                                                <li><a href="/machinery-tools" className={location.pathname === '/machinery-tools' ? 'active-link' : ''} onClick={closeMobileMenu}>Farm Equipment & Tools</a></li>
+                                                <li><a href="/agri-commodities" className={location.pathname === '/agri-commodities' ? 'active-link' : ''} onClick={closeMobileMenu}>Agri Commodities</a></li>
+                                                <li><a href="/general-trading" className={location.pathname === '/general-trading' ? 'active-link' : ''} onClick={closeMobileMenu}>General Trading</a></li>
+                                                <li><a href="/handicrafts" className={location.pathname === '/handicrafts' ? 'active-link' : ''} onClick={closeMobileMenu}>Handicrafts</a></li>
+                                                <li><a href="/spices" className={location.pathname === '/spices' ? 'active-link' : ''} onClick={closeMobileMenu}>Spices</a></li>
+                                                <li><a href="/handlooms-products" className={location.pathname === '/handlooms-products' ? 'active-link' : ''} onClick={closeMobileMenu}>Handlooms Products</a></li>
                                             </motion.ul>
                                         )}
                                     </AnimatePresence>

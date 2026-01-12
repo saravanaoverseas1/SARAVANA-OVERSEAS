@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaInstagram, FaYoutube, FaLinkedin, FaTwitter, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaChevronRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import '../index.css';
@@ -35,10 +36,10 @@ const Footer = () => {
                     >
                         <h3>Navigation</h3>
                         <ul className="vertical-links">
-                            <li><a href="#home"><FaChevronRight className="link-icon" /> Home</a></li>
-                            <li><a href="#products"><FaChevronRight className="link-icon" /> Products</a></li>
-                            <li><a href="#about"><FaChevronRight className="link-icon" /> About</a></li>
-                            <li><a href="#blogs"><FaChevronRight className="link-icon" /> Insights</a></li>
+                            <li><a href="/"><FaChevronRight className="link-icon" /> Home</a></li>
+                            <li><Link to="/#products"><FaChevronRight className="link-icon" /> Products</Link></li>
+                            <li><Link to="/#about"><FaChevronRight className="link-icon" /> About</Link></li>
+                            <li><Link to="/#blogs"><FaChevronRight className="link-icon" /> Insights</Link></li>
                         </ul>
                     </motion.div>
 

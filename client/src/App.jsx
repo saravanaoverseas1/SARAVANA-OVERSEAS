@@ -6,17 +6,17 @@ import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
 // Lazy load pages for code splitting
-const HomePage = React.lazy(() => import('./components/HomePage'));
-const Footer = React.lazy(() => import('./components/Footer'));
+import HomePage from './components/HomePage';
+import Footer from './components/Footer';
 
 // Product Pages
-const MachineryVehicles = React.lazy(() => import('./pages/MachineryVehicles'));
-const MachineryTools = React.lazy(() => import('./pages/MachineryTools'));
-const AgriCommodities = React.lazy(() => import('./pages/AgriCommodities'));
-const GeneralTrading = React.lazy(() => import('./pages/GeneralTrading'));
-const Handicrafts = React.lazy(() => import('./pages/Handicrafts'));
-const Spices = React.lazy(() => import('./pages/Spices'));
-const HandloomsProducts = React.lazy(() => import('./pages/HandloomsProducts'));
+import MachineryVehicles from './pages/MachineryVehicles';
+import MachineryTools from './pages/MachineryTools';
+import AgriCommodities from './pages/AgriCommodities';
+import GeneralTrading from './pages/GeneralTrading';
+import Handicrafts from './pages/Handicrafts';
+import Spices from './pages/Spices';
+import HandloomsProducts from './pages/HandloomsProducts';
 
 // Modern, minimalist loading state
 const LoadingScreen = () => (

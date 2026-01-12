@@ -29,19 +29,19 @@ const Products = () => {
             image: '/general_trading_hero_v2.png'
         },
         {
-            id: 'Handicrafts',
+            id: 'handicrafts',
             name: 'HandiCrafts',
             description: 'Palm base, holy cross, wooden toys and traditional terracotta art.',
             image: '/handicrafts_hero.jpg'
         },
         {
-            id: 'Spices',
+            id: 'spices',
             name: 'Spices',
             description: 'Authentic flavors and aromas from the finest spice gardens.',
             image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop'
         },
         {
-            id: 'Handlooms-Products',
+            id: 'handlooms-products',
             name: 'Handlooms Products',
             description: 'Exquisite hand-woven textiles, including bedsheets, sweaters, and traditional artisanal fabrics.',
             image: 'https://images.unsplash.com/photo-1520006403909-838d6b92c22e?q=80&w=2070&auto=format&fit=crop'

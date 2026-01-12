@@ -114,9 +114,9 @@ const AgriCommodities = () => {
                                 </div>
                             </div>
 
-                            <a href="/#contact" className="btn-send-message inquiry-btn">
+                            <Link to="/#contact" className="btn-send-message inquiry-btn">
                                 INQUIRE NOW <FaCheckCircle />
-                            </a>
+                            </Link>
                         </motion.div>
                     </div>
                 </div>
