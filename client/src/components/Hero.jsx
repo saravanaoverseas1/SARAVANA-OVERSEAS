@@ -47,18 +47,46 @@ const Hero = () => {
 
                 <motion.div
                     className="hero-main-title"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.5 }}
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                        visible: {
+                            transition: {
+                                staggerChildren: 0.08,
+                                delayChildren: 0.5
+                            }
+                        }
+                    }}
                 >
-                    SARAVANA OVERSEAS
+                    {"SARAVANA OVERSEAS".split("").map((char, index) => (
+                        <motion.span
+                            key={index}
+                            animate={{
+                                y: [0, -15, 0],
+                            }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                delay: index * 0.1,
+                                ease: "easeInOut"
+                            }}
+                            style={{
+                                display: "inline-block",
+                                whiteSpace: char === " " ? "pre" : "normal",
+                                color: "#FFFFFF",
+                                opacity: 1
+                            }}
+                        >
+                            {char}
+                        </motion.span>
+                    ))}
                 </motion.div>
 
                 <motion.p
                     className="hero-tagline-italic"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
                 >
                     <i>Revolutionizing Global Trade Through Innovation</i>
                 </motion.p>

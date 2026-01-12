@@ -753,13 +753,25 @@ ul {
   color: #FFFFFF;
   word-wrap: break-word;
   word-break: break-word;
-  /* Ensure wrapping */
   max-width: 90vw;
-  /* Prevent overflow */
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
   hyphens: auto;
   overflow-wrap: break-word;
+  /* Restored to solid white as per request */
+  color: #FFFFFF;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+}
+
+@keyframes shine {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: 200% center;
+  }
 }
 
 @keyframes tide-wave {
