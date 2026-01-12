@@ -30,59 +30,22 @@ const Hero = () => {
                 {/* Logo Box (Circle Redesign) */}
                 <motion.div
                     className="logo-box-circle"
-                    initial={{ opacity: 0, scale: 0.8, y: 0 }}
-                    animate={{
-                        opacity: 1,
-                        scale: 1,
-                        y: [0, -15, 0],
-                        rotate: [0, 2, -2, 0]
-                    }}
-                    transition={{
-                        opacity: { duration: 0.8, delay: 0.4 },
-                        scale: { duration: 0.8, delay: 0.4 },
-                        y: {
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            repeatType: "loop"
-                        },
-                        rotate: {
-                            duration: 5,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            repeatType: "loop"
-                        }
-                    }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
                     whileHover={{ scale: 1.05 }}
                 >
                     <img src={logoImage} alt="Logo" className="hero-logo-img" />
                 </motion.div>
 
-                <div className="hero-main-title">
-                    {["SARAVANA", "OVERSEAS"].map((word, wordIndex) => (
-                        <span key={wordIndex} style={{ display: "inline-block", whiteSpace: "nowrap", margin: "0 10px" }}> {/* Group letters by word */}
-                            {Array.from(word).map((letter, letterIndex) => (
-                                <motion.span
-                                    key={letterIndex}
-                                    style={{ display: "inline-block" }}
-                                    initial={{ y: 0, color: "#ffffff" }}
-                                    animate={{
-                                        y: [0, -15, 0],
-                                        color: ["#ffffff", "#4FC3F7", "#ffffff"],
-                                    }}
-                                    transition={{
-                                        duration: 3,
-                                        repeat: Infinity,
-                                        ease: "easeInOut",
-                                        delay: (wordIndex * 5 + letterIndex) * 0.1, // Adjusted delay calculation
-                                    }}
-                                >
-                                    {letter}
-                                </motion.span>
-                            ))}
-                        </span>
-                    ))}
-                </div>
+                <motion.div
+                    className="hero-main-title"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                    SARAVANA OVERSEAS
+                </motion.div>
 
                 <motion.p
                     className="hero-tagline-italic"

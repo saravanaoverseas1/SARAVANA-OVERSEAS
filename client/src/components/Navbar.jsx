@@ -28,38 +28,47 @@ const Navbar = () => {
     const [activeSection, setActiveSection] = useState('home');
 
     useEffect(() => {
+        let ticking = false;
+
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    setScrolled(window.scrollY > 50);
 
-            // Calculate scroll progress for structure
-            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = (window.scrollY / totalHeight) * 100;
-            setScrollProgress(progress);
+                    // Calculate scroll progress for structure
+                    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+                    setScrollProgress(progress);
 
-            // Scroll Spy Logic
-            const sections = ['home', 'products', 'blogs', 'about', 'contact'];
-            let current = '';
+                    // Scroll Spy Logic
+                    const sections = ['home', 'products', 'blogs', 'about', 'contact'];
+                    let current = '';
 
-            for (const section of sections) {
-                const element = document.getElementById(section);
-                if (element) {
-                    const rect = element.getBoundingClientRect();
-                    // If the top of the section is near the top of the viewport (with some offset)
-                    // Or if we've scrolled past it but haven't hit the next one yet
-                    if (rect.top <= 150 && rect.bottom >= 150) {
-                        current = section;
+                    for (const section of sections) {
+                        const element = document.getElementById(section);
+                        if (element) {
+                            const rect = element.getBoundingClientRect();
+                            // If the top of the section is near the top of the viewport (with some offset)
+                            if (rect.top <= 150 && rect.bottom >= 150) {
+                                current = section;
+                            }
+                        }
                     }
-                }
-            }
 
-            if (current) {
-                setActiveSection(current);
-            } else if (window.scrollY < 100) {
-                setActiveSection('home');
+                    if (current) {
+                        setActiveSection(current);
+                    } else if (window.scrollY < 100) {
+                        setActiveSection('home');
+                    }
+
+                    ticking = false;
+                });
+
+                ticking = true;
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 

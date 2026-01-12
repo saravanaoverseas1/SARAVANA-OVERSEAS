@@ -26,6 +26,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  /* Enable momentum scrolling on iOS */
 }
 
 body {
@@ -36,6 +38,11 @@ body {
   line-height: 1.6;
   position: relative;
   max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Improve font rendering */
+  transform: translateZ(0);
+  /* Force GPU acceleration */
 }
 
 /* Prevent horizontal scroll globally */
@@ -94,7 +101,8 @@ body::before {
   object-fit: cover;
   z-index: -2;
   opacity: 0.3;
-  filter: brightness(1.1) saturate(0.8);
+  filter: brightness(1.1);
+  will-change: transform;
 }
 
 a {
@@ -141,6 +149,8 @@ ul {
 
 .section-padding {
   padding: 100px 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1000px;
 }
 
 .heading-serif {
@@ -173,6 +183,7 @@ ul {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  will-change: background, backdrop-filter;
 }
 
 .navbar.scrolled {
