@@ -8,7 +8,7 @@ const Blogs = () => {
     const blogPosts = [
         {
             id: 1,
-            title: "Navigating Customs Regulations: A Beginner's Guide",
+            title: "Navigate Customs Regulations: A Beginner's Guide",
             excerpt: "Everything you need to know about customs documentation and compliance for smooth shipping.",
             date: "December 10, 2024",
             author: "Saravana Team",
