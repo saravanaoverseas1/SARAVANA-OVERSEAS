@@ -33,18 +33,19 @@
     }
 
     .hero-main-title {
-        font-size: 2.5rem !important;
+        font-size: 2.8rem !important;
         max-width: 95vw;
         padding: 0 10px;
         line-height: 1.2 !important;
         letter-spacing: 1px !important;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
+        flex-direction: column;
+        gap: 0.1em;
     }
 
-    .hero-title-char {
+    .hero-title-word {
+        display: block;
         animation: tide-wave 3s linear infinite;
+        margin-right: 0;
     }
 
     .hero-tagline-italic {
@@ -193,8 +194,12 @@
     }
 
     .hero-main-title {
-        font-size: 1.8rem !important;
+        font-size: 2.2rem !important;
         letter-spacing: 0px !important;
+    }
+
+    .hero-title-word {
+        font-size: 2.2rem;
     }
 
     .hero-tagline-italic {

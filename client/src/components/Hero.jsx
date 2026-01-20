@@ -59,30 +59,30 @@ const Hero = () => {
                     variants={{
                         visible: {
                             transition: {
-                                staggerChildren: 0.05,
+                                staggerChildren: 0.2,
                                 delayChildren: 0.5
                             }
                         }
                     }}
                 >
-                    {"SARAVANA OVERSEAS".split("").map((char, index) => (
+                    {"SARAVANA OVERSEAS".split(" ").map((word, wordIndex) => (
                         <motion.span
-                            key={index}
+                            key={wordIndex}
                             animate={{
-                                y: [0, -15, 0],
+                                y: [0, -10, 0],
                             }}
                             transition={{
                                 duration: 2,
                                 repeat: Infinity,
-                                delay: index * 0.1,
+                                delay: wordIndex * 0.3,
                                 ease: "easeInOut"
                             }}
-                            className="hero-title-char"
+                            className="hero-title-word"
                             style={{
-                                animationDelay: `${index * 0.05}s`
+                                animationDelay: `${wordIndex * 0.3}s`
                             }}
                         >
-                            {char === " " ? "\u00A0" : char}
+                            {word}
                         </motion.span>
                     ))}
                 </motion.div>

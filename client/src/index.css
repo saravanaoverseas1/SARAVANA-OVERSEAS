@@ -873,19 +873,16 @@ ul {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
   color: #FFFFFF;
-  word-wrap: break-word;
-  word-break: break-word;
   max-width: 90vw;
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
-  hyphens: auto;
-  overflow-wrap: break-word;
-  /* Restored to solid white as per request */
-  color: #FFFFFF;
-  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3em;
 }
 
 @keyframes shine {
