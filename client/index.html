@@ -22,6 +22,12 @@
   <meta name="author" content="Saravana Overseas" />
   <meta name="robots" content="index, follow" />
 
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://saravanaoverseas.com/" />
+
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://saravanaoverseas.com/" />
@@ -50,20 +56,49 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Saravana Overseas",
+    "legalName": "SARAVANA OVERSEAS",
     "url": "https://saravanaoverseas.com",
-    "logo": "https://saravanaoverseas.com/logo.png",
-    "description": "Progressive international trade enterprise dedicated to bridging the gap between global supply and demand.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://saravanaoverseas.com/logo.png",
+      "width": "512",
+      "height": "512"
+    },
+    "image": "https://saravanaoverseas.com/logo.png",
+    "description": "Progressive international trade enterprise dedicated to bridging the gap between global supply and demand. We specialize in Farm Machinery, Agri Commodities, Spices, Handicrafts, and General Trading.",
+    "foundingDate": "2020",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Dindigul",
+      "addressLocality": "Dindigul",
       "addressRegion": "Tamil Nadu",
-      "addressCountry": "India"
+      "postalCode": "624001",
+      "addressCountry": "IN"
     },
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-9047385702",
-      "contactType": "customer service"
+      "contactType": "customer service",
+      "areaServed": "Worldwide",
+      "availableLanguage": ["English", "Tamil"]
     },
-    "sameAs": []
+    "email": "info@saravanaoverseas.com",
+    "sameAs": [
+      "https://saravanaoverseas.com"
+    ],
+    "areaServed": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
+    "knowsAbout": [
+      "International Trade",
+      "Farm Machinery",
+      "Agricultural Commodities",
+      "Spices Export",
+      "Handicrafts",
+      "General Trading",
+      "Logistics"
+    ]
   }
   </script>
 </head>
