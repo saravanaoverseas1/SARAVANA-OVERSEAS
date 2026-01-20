@@ -1,7 +1,20 @@
-/* Hero Mobile Responsive Fixes */
+/* ===== MOBILE RESPONSIVE STYLES ===== */
+
+/* Large Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .heading-serif {
+        font-size: 2.4rem;
+    }
+
+    .hero-main-title {
+        font-size: 4rem;
+    }
+}
+
+/* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
     .hero {
-        min-height: 70vh;
+        min-height: 80vh;
     }
 
     .hero-content {
@@ -14,13 +27,13 @@
     }
 
     .logo-box-circle {
-        width: 120px;
-        height: 120px;
+        width: 130px;
+        height: 130px;
         margin-bottom: 15px;
     }
 
     .hero-main-title {
-        font-size: 2.2rem !important;
+        font-size: 2.5rem !important;
         max-width: 95vw;
         padding: 0 10px;
         line-height: 1.2 !important;
@@ -28,6 +41,10 @@
         word-break: break-word;
         overflow-wrap: break-word;
         hyphens: auto;
+    }
+
+    .hero-title-char {
+        animation: tide-wave 3s linear infinite;
     }
 
     .hero-tagline-italic {
@@ -59,6 +76,48 @@
         padding: 12px 24px;
     }
 
+    /* Section headings */
+    .heading-serif {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .section-tag {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
+
+    /* Products grid */
+    .product-category-grid-modern {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product-flip-card {
+        height: 380px;
+    }
+
+    /* WhatsApp button */
+    .global-whatsapp-btn {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .global-whatsapp-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .global-whatsapp-btn::before {
+        display: none;
+    }
+
+    .global-whatsapp-btn::after {
+        display: none;
+    }
+
     /* Fix products grid on mobile */
     .product-grid,
     .gallery-grid,
@@ -79,7 +138,29 @@
         max-width: 100%;
     }
 
-    /* Ensure all text is readable on mobile */
+    /* Blog cards */
+    .featured-proper-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .featured-proper-card {
+        height: auto;
+        min-height: 450px;
+    }
+
+    /* About section */
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* Ensure all text is readable */
     h1,
     h2,
     h3,
@@ -91,11 +172,124 @@
         hyphens: auto;
     }
 
-    /* Fix any potential text overflow */
     p,
     span,
     div {
         word-wrap: break-word;
         overflow-wrap: break-word;
+    }
+}
+
+/* Small Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero {
+        min-height: 70vh;
+    }
+
+    .logo-box-circle {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    .hero-main-title {
+        font-size: 1.8rem !important;
+        letter-spacing: 0px !important;
+    }
+
+    .hero-tagline-italic {
+        font-size: 0.9rem;
+    }
+
+    .heading-serif {
+        font-size: 1.6rem;
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    /* Product cards */
+    .product-flip-card {
+        height: 320px;
+    }
+
+    .product-flip-overlay {
+        padding: 20px;
+    }
+
+    .product-flip-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .product-back-title {
+        font-size: 1.2rem;
+    }
+
+    .product-back-desc {
+        font-size: 0.85rem;
+    }
+
+    /* WhatsApp button smaller on phones */
+    .global-whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .global-whatsapp-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Contact form */
+    .contact-form-wrapper {
+        padding: 20px;
+    }
+
+    /* Jobs grid */
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Very Small Devices (max-width: 360px) */
+@media (max-width: 360px) {
+    .hero-main-title {
+        font-size: 1.5rem !important;
+    }
+
+    .heading-serif {
+        font-size: 1.4rem;
+    }
+
+    .logo-box-circle {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Landscape mode for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        padding-top: 80px;
+    }
+
+    .logo-box-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero-main-title {
+        font-size: 2rem !important;
     }
 }
