@@ -166,8 +166,132 @@ ul {
 
 .heading-serif {
   font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 2.8rem;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #1976D2 0%, #42A5F5 25%, #FFA726 50%, #42A5F5 75%, #1976D2 100%);
+  background-size: 400% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: tide-wave 4s linear infinite;
+}
+
+/* Section Header Wrapper */
+.section-header-modern {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-tag {
+  display: inline-block;
+  background: rgba(25, 118, 210, 0.1);
+  color: var(--accent-blue);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--accent-gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/* Global WhatsApp Floating Button - Premium Redesign */
+.global-whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow:
+    0 4px 15px rgba(37, 211, 102, 0.4),
+    0 0 0 0 rgba(37, 211, 102, 0.4);
+  z-index: 9999;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  animation: whatsapp-pulse 2s infinite;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.global-whatsapp-btn::before {
+  content: 'Chat with us!';
+  position: absolute;
+  right: 75px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.global-whatsapp-btn::after {
+  content: '';
+  position: absolute;
+  right: 70px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.global-whatsapp-btn:hover::before,
+.global-whatsapp-btn:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.global-whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 8px 30px rgba(37, 211, 102, 0.5),
+    0 0 0 8px rgba(37, 211, 102, 0.15);
+  animation: none;
+}
+
+.global-whatsapp-btn:active {
+  transform: scale(0.95);
+}
+
+.global-whatsapp-btn svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow:
+      0 4px 15px rgba(37, 211, 102, 0.4),
+      0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+
+  70% {
+    box-shadow:
+      0 4px 15px rgba(37, 211, 102, 0.4),
+      0 0 0 15px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 4px 15px rgba(37, 211, 102, 0.4),
+      0 0 0 0 rgba(37, 211, 102, 0);
+  }
 }
 
 /* Glassmorphism Card */
@@ -776,12 +900,37 @@ ul {
 
 @keyframes tide-wave {
   0% {
-    background-position: -200% center;
+    background-position: 200% center;
   }
 
   100% {
-    background-position: 200% center;
+    background-position: -200% center;
   }
+}
+
+/* Hero Title Character with Tide Wave Effect */
+.hero-title-char {
+  display: inline-block;
+  background: linear-gradient(90deg, #42A5F5 0%, #FFFFFF 25%, #42A5F5 50%, #BBDEFB 75%, #42A5F5 100%);
+  background-size: 400% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: tide-wave 4s linear infinite;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+/* Hero Title Word with Tide Wave Effect */
+.hero-title-word {
+  display: inline-block;
+  background: linear-gradient(90deg, #42A5F5 0%, #FFFFFF 30%, #42A5F5 50%, #BBDEFB 70%, #42A5F5 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: tide-wave 2s linear infinite;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  margin-right: 0.2em;
 }
 
 .hero-tagline-italic {

@@ -3,14 +3,9 @@ import { motion } from 'framer-motion';
 import '../index.css';
 import cargoShipVideo from '../assets/cargo-ship.mp4';
 import logoImage from '../assets/logo.png';
-import { FaMapMarkerAlt, FaWhatsapp, FaPaperPlane } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 
 const Hero = () => {
-    const handleWhatsAppClick = () => {
-        const phoneNumber = '919047385702';
-        const message = encodeURIComponent('Hello Saravana Overseas! I would like to inquire about your services.');
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-    };
 
 
     return (
@@ -38,8 +33,20 @@ const Hero = () => {
                 <motion.div
                     className="logo-box-circle"
                     initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    animate={{
+                        opacity: 1,
+                        scale: 1,
+                        y: [0, -15, 0]
+                    }}
+                    transition={{
+                        duration: 0.8,
+                        delay: 0.4,
+                        y: {
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }
+                    }}
                     whileHover={{ scale: 1.05 }}
                 >
                     <img src={logoImage} alt="Logo" className="hero-logo-img" />
@@ -52,7 +59,7 @@ const Hero = () => {
                     variants={{
                         visible: {
                             transition: {
-                                staggerChildren: 0.08,
+                                staggerChildren: 0.05,
                                 delayChildren: 0.5
                             }
                         }
@@ -70,14 +77,12 @@ const Hero = () => {
                                 delay: index * 0.1,
                                 ease: "easeInOut"
                             }}
+                            className="hero-title-char"
                             style={{
-                                display: "inline-block",
-                                whiteSpace: char === " " ? "pre" : "normal",
-                                color: "#FFFFFF",
-                                opacity: 1
+                                animationDelay: `${index * 0.05}s`
                             }}
                         >
-                            {char}
+                            {char === " " ? "\u00A0" : char}
                         </motion.span>
                     ))}
                 </motion.div>
@@ -122,23 +127,6 @@ const Hero = () => {
                     </motion.a>
                 </motion.div>
             </motion.div>
-
-            {/* Floating WhatsApp Button - Localized to Hero */}
-            <motion.div
-                className="hero-whatsapp-float"
-                onClick={handleWhatsAppClick}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-            >
-                <FaWhatsapp />
-                <span className="whatsapp-tooltip">Chat with us</span>
-            </motion.div>
-
-
-
         </section>
     );
 };
